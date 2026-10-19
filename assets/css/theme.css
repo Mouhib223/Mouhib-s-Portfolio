@@ -1,0 +1,211 @@
+/* =========================================================================
+   THEME VARIABLES — DARK & LIGHT
+   ========================================================================= */
+
+/* ----- Dark Theme (default) ----- */
+[data-theme="dark"] {
+  --bg-primary:      #0f1923;
+  --bg-secondary:    #111d2b;
+  --bg-tertiary:     #0d1722;
+  --nav-bg:          rgba(15, 25, 35, 0.92);
+  --card-bg:         #141f2e;
+  --input-bg:        #0d1722;
+  --input-bg-focus:  #111d2b;
+
+  --text-primary:    #f0f4f8;
+  --text-secondary:  #8ea2b8;
+  --text-muted:      #4b6175;
+
+  --accent:          #10d9a0;
+  --accent-dark:     #0ea87a;
+  --accent-text:     #021812;
+  --accent-soft:     rgba(16, 217, 160, 0.08);
+  --accent-border:   rgba(16, 217, 160, 0.25);
+  --accent-glow:     rgba(16, 217, 160, 0.4);
+
+  --border:          rgba(255, 255, 255, 0.08);
+  --shadow-color:    rgba(0, 0, 0, 0.5);
+
+  --tag-bg:          rgba(255, 255, 255, 0.04);
+  --tag-text:        #8ea2b8;
+  --tag-border:      rgba(255, 255, 255, 0.07);
+
+  color-scheme: dark;
+}
+
+/* ----- Light Theme ----- */
+[data-theme="light"] {
+  --bg-primary:      #f8fafc;
+  --bg-secondary:    #f1f5f9;
+  --bg-tertiary:     #e8f0f8;
+  --nav-bg:          rgba(248, 250, 252, 0.92);
+  --card-bg:         #ffffff;
+  --input-bg:        #f8fafc;
+  --input-bg-focus:  #ffffff;
+
+  --text-primary:    #0d1f2d;
+  --text-secondary:  #475569;
+  --text-muted:      #94a3b8;
+
+  --accent:          #0a9e75;
+  --accent-dark:     #087a5a;
+  --accent-text:     #ffffff;
+  --accent-soft:     rgba(10, 158, 117, 0.08);
+  --accent-border:   rgba(10, 158, 117, 0.3);
+  --accent-glow:     rgba(10, 158, 117, 0.35);
+
+  --border:          rgba(15, 23, 42, 0.1);
+  --shadow-color:    rgba(15, 23, 42, 0.12);
+
+  --tag-bg:          #f1f5f9;
+  --tag-text:        #475569;
+  --tag-border:      #e2e8f0;
+
+  color-scheme: light;
+}
+
+/* =========================================================================
+   THEME TOGGLE BUTTON
+   ========================================================================= */
+.theme-toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+}
+
+.theme-toggle:hover {
+  transform: rotate(15deg) scale(1.05);
+  color: var(--accent);
+  border-color: var(--accent-border);
+}
+
+.theme-toggle__icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Dark theme shows moon, light theme shows sun */
+[data-theme="dark"] .theme-toggle__icon--moon {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+[data-theme="dark"] .theme-toggle__icon--sun {
+  opacity: 0;
+  transform: scale(0.5) rotate(90deg);
+}
+
+[data-theme="light"] .theme-toggle__icon--sun {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+[data-theme="light"] .theme-toggle__icon--moon {
+  opacity: 0;
+  transform: scale(0.5) rotate(-90deg);
+}
+
+/* =========================================================================
+   SECTION ALTERNATION
+   ========================================================================= */
+/* Override even section backgrounds more specifically */
+#about.section,
+#skills.section,
+#education.section,
+#contact.section {
+  background-color: var(--bg-secondary);
+}
+
+/* =========================================================================
+   SCROLLBAR STYLING
+   ========================================================================= */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-border);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Selection */
+::selection {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* =========================================================================
+   MOBILE NAV OVERLAY
+   ========================================================================= */
+.nav__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.nav__overlay--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =========================================================================
+   PROJECT VISUAL ACCENT COLORS
+   ========================================================================= */
+.project-card__visual--fintech {
+  background: linear-gradient(135deg, #0d1b2a, #0a2540);
+}
+
+.project-card__visual--vfx {
+  background: linear-gradient(135deg, #130d2a, #0a1826);
+}
+
+.project-card__visual--game {
+  background: linear-gradient(135deg, #0d1b2a, #1a0a3a);
+}
+
+.project-card__visual--java {
+  background: linear-gradient(135deg, #0d1b2a, #1a1a0a);
+}
+
+.project-card__visual--embedded {
+  background: linear-gradient(135deg, #0d1b2a, #0a1520);
+}
+
+.project-card__visual--mobile {
+  background: linear-gradient(135deg, #0d1b2a, #0d2a1a);
+}
+
+[data-theme="light"] .project-card__visual--fintech,
+[data-theme="light"] .project-card__visual--vfx,
+[data-theme="light"] .project-card__visual--game,
+[data-theme="light"] .project-card__visual--java,
+[data-theme="light"] .project-card__visual--embedded,
+[data-theme="light"] .project-card__visual--mobile {
+  background: linear-gradient(135deg, #1a2e45, #0d1f30);
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mouhib223.github.io/Mouhib-s-Portfolio/sitemap.xml

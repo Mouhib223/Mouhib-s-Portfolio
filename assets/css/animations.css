@@ -1,0 +1,174 @@
+/* =========================================================================
+   SCROLL REVEAL & MICRO-INTERACTION ANIMATIONS
+   ========================================================================= */
+
+/* Keyframe animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Reveal-on-scroll initial state */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal--left {
+  transform: translateX(-30px);
+}
+
+.reveal--right {
+  transform: translateX(30px);
+}
+
+.reveal--scale {
+  transform: scale(0.95);
+}
+
+/* Reveal-on-scroll visible state */
+.reveal.is-visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Staggered children delays */
+.reveal[data-delay="1"] { transition-delay: 0.1s; }
+.reveal[data-delay="2"] { transition-delay: 0.2s; }
+.reveal[data-delay="3"] { transition-delay: 0.3s; }
+.reveal[data-delay="4"] { transition-delay: 0.4s; }
+.reveal[data-delay="5"] { transition-delay: 0.5s; }
+.reveal[data-delay="6"] { transition-delay: 0.6s; }
+
+/* Hero initial animation */
+.hero__status {
+  animation: fadeInUp 0.6s ease 0.1s both;
+}
+
+.hero__greeting {
+  animation: fadeInUp 0.6s ease 0.2s both;
+}
+
+.hero__name {
+  animation: fadeInUp 0.6s ease 0.3s both;
+}
+
+.hero__title-wrapper {
+  animation: fadeInUp 0.6s ease 0.4s both;
+}
+
+.hero__bio {
+  animation: fadeInUp 0.6s ease 0.5s both;
+}
+
+.hero__actions {
+  animation: fadeInUp 0.6s ease 0.6s both;
+}
+
+.hero__socials {
+  animation: fadeInUp 0.6s ease 0.7s both;
+}
+
+.hero__visual {
+  animation: scaleIn 0.8s ease 0.3s both;
+}
+
+/* Card hover lift effect */
+.timeline__card,
+.skill-category,
+.project-card,
+.edu-card,
+.cert-card,
+.contact__card {
+  position: relative;
+}
+
+/* Underline grow animation for links */
+@keyframes underlineGrow {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Glow pulse for status dot (fallback if not in main) */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--accent-glow); }
+  50% { box-shadow: 0 0 0 8px transparent; }
+}
+
+/* Reduced motion — disable all animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero__status,
+  .hero__greeting,
+  .hero__name,
+  .hero__title-wrapper,
+  .hero__bio,
+  .hero__actions,
+  .hero__socials,
+  .hero__visual {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

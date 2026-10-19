@@ -1,0 +1,11 @@
+PLACEHOLDER — Replace this file with your real CV.
+
+The "Download CV" buttons in index.html point to:  assets/Mouhib_Hlaili_CV.pdf
+
+To enable the CV download:
+  1. Export your CV/resume as a PDF
+  2. Name it exactly:  Mouhib_Hlaili_CV.pdf
+  3. Place it in this folder (assets/)
+  4. Delete this placeholder .txt file
+
+The download links will then work automatically — no code changes needed.
