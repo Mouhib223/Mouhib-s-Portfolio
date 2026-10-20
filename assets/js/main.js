@@ -8,6 +8,143 @@
   'use strict';
 
   /* =====================================================================
+     RENDERER — build list sections from data.js (structured content)
+     ===================================================================== */
+  const Renderer = (function () {
+    var data = window.PORTFOLIO_DATA || null;
+
+    function escapeHtml(str) {
+      if (str == null) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function tagsHtml(tags) {
+      return tags.map(function (t) { return '<span class="tag">' + escapeHtml(t) + '</span>'; }).join('');
+    }
+
+    function linkIconSvg() {
+      return '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>';
+    }
+
+    function calIconSvg() {
+      return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>';
+    }
+
+    function renderExperience() {
+      var container = document.getElementById('experienceList');
+      if (!container || !data) return;
+      var items = data.experience.map(function (exp, i) {
+        var isLast = (i === data.experience.length - 1);
+        var line = isLast ? '' : '<div class="timeline__line"></div>';
+        var badge = exp.badge ? '<span class="timeline__badge' + (exp.badgeType === 'current' ? ' timeline__badge--current' : '') + '">' + escapeHtml(exp.badge) + '</span>' : '';
+        var duties = exp.duties.map(function (d) { return '<li>' + escapeHtml(d) + '</li>'; }).join('');
+        return '<article class="timeline__item" role="listitem">' +
+          '<div class="timeline__marker" aria-hidden="true"><div class="timeline__dot"></div>' + line + '</div>' +
+          '<div class="timeline__card">' +
+            '<div class="timeline__card-header">' +
+              '<div><h3 class="timeline__role">' + escapeHtml(exp.role) + '</h3><p class="timeline__company">' + escapeHtml(exp.company) + '</p></div>' +
+              '<div class="timeline__meta"><span class="timeline__date">' + calIconSvg() + escapeHtml(exp.period) + '</span>' + badge + '</div>' +
+            '</div>' +
+            '<ul class="timeline__duties">' + duties + '</ul>' +
+            '<div class="timeline__tags">' + tagsHtml(exp.tags) + '</div>' +
+          '</div>' +
+        '</article>';
+      }).join('');
+      container.innerHTML = items;
+    }
+
+    function renderEducation() {
+      var container = document.getElementById('educationList');
+      if (!container || !data) return;
+      var icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>';
+      var items = data.education.map(function (ed) {
+        var featured = ed.featured ? ' edu-card--featured' : '';
+        var note = ed.note ? '<p class="edu-card__note">' + escapeHtml(ed.note) + '</p>' : '';
+        return '<article class="edu-card' + featured + '">' +
+          '<div class="edu-card__icon" aria-hidden="true">' + icon + '</div>' +
+          '<div class="edu-card__content">' +
+            '<div class="edu-card__header">' +
+              '<div><h3 class="edu-card__degree">' + escapeHtml(ed.degree) + '</h3><p class="edu-card__institution">' + escapeHtml(ed.institution) + '</p>' + note + '</div>' +
+              '<span class="edu-card__date">' + escapeHtml(ed.period) + '</span>' +
+            '</div>' +
+            '<p class="edu-card__description">' + escapeHtml(ed.description) + '</p>' +
+            '<div class="edu-card__tags">' + tagsHtml(ed.tags) + '</div>' +
+          '</div>' +
+        '</article>';
+      }).join('');
+      container.innerHTML = items;
+    }
+
+    function credIcon(type) {
+      var icons = {
+        coursera: '<svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#0056D2"/><text x="20" y="26" fill="white" font-size="14" font-weight="700" text-anchor="middle" font-family="Inter, sans-serif">C</text></svg>',
+        linedata: '<svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#003366"/><text x="20" y="26" fill="white" font-size="10" font-weight="700" text-anchor="middle" font-family="Inter, sans-serif">LD</text></svg>',
+        'linedata-qa': '<svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#003366"/><text x="20" y="26" fill="white" font-size="10" font-weight="700" text-anchor="middle" font-family="Inter, sans-serif">QA</text></svg>',
+        esprit: '<svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#0fd6a0"/><text x="20" y="26" fill="#011410" font-size="9" font-weight="700" text-anchor="middle" font-family="Inter, sans-serif">ESP</text></svg>'
+      };
+      return icons[type] || icons.coursera;
+    }
+
+    function renderCredentials() {
+      var container = document.getElementById('credentialsList');
+      if (!container || !data) return;
+      var extIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>';
+      var items = data.credentials.map(function (c) {
+        var link = c.link ? '<a href="' + escapeHtml(c.link.href) + '" target="_blank" rel="noopener noreferrer" class="cert-card__link">' + escapeHtml(c.link.label) + extIcon + '</a>' : '';
+        var note = c.note ? '<p class="cert-card__note">' + escapeHtml(c.note) + '</p>' : '';
+        var date = c.date ? '<span class="cert-card__date">' + escapeHtml(c.date) + '</span>' : '';
+        return '<article class="cert-card">' +
+          '<div class="cert-card__icon" aria-hidden="true">' + credIcon(c.iconType) + '</div>' +
+          '<div class="cert-card__content">' +
+            '<h3 class="cert-card__title">' + escapeHtml(c.title) + '</h3>' +
+            '<p class="cert-card__issuer">' + escapeHtml(c.issuer) + '</p>' +
+            '<p class="cert-card__description">' + escapeHtml(c.description) + '</p>' +
+            link + note + date +
+          '</div>' +
+        '</article>';
+      }).join('');
+      container.innerHTML = items;
+    }
+
+    function renderProjects() {
+      var container = document.getElementById('projectsGrid');
+      if (!container || !data) return;
+      var items = data.projects.map(function (p) {
+        var visualSvg = data.projectVisuals[p.visual] || '';
+        var links = p.links.map(function (l) {
+          return '<a href="' + escapeHtml(l.href) + '" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="' + escapeHtml(l.label) + '">' + linkIconSvg() + '</a>';
+        }).join('');
+        return '<article class="project-card" data-category="' + escapeHtml(p.category) + '">' +
+          '<div class="project-card__visual project-card__visual--' + escapeHtml(p.visual) + '">' + visualSvg + '</div>' +
+          '<div class="project-card__content">' +
+            '<div class="project-card__header">' +
+              '<h3 class="project-card__title">' + escapeHtml(p.title) + '</h3>' +
+              '<div class="project-card__links">' + links + '</div>' +
+            '</div>' +
+            '<p class="project-card__description">' + escapeHtml(p.description) + '</p>' +
+            '<div class="project-card__tags">' + tagsHtml(p.tags) + '</div>' +
+          '</div>' +
+        '</article>';
+      }).join('');
+      container.innerHTML = items;
+    }
+
+    function init() {
+      renderExperience();
+      renderEducation();
+      renderCredentials();
+      renderProjects();
+    }
+
+    return { init, renderProjects };
+  })();
+
+  /* =====================================================================
      THEME MANAGEMENT
      ===================================================================== */
   const ThemeManager = (function () {
@@ -88,6 +225,7 @@
     const navbar = document.getElementById('navbar');
     const navLinks = document.getElementById('navLinks');
     const hamburger = document.getElementById('hamburger');
+    const overlay = document.getElementById('navOverlay');
     const links = document.querySelectorAll('.nav__link');
     const sections = document.querySelectorAll('section[id]');
 
@@ -123,6 +261,10 @@
       const isOpen = navLinks.classList.toggle('nav__links--open');
       hamburger.classList.toggle('nav__hamburger--open', isOpen);
       hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      if (overlay) {
+        overlay.classList.toggle('nav__overlay--visible', isOpen);
+        overlay.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+      }
       document.body.style.overflow = isOpen ? 'hidden' : '';
     }
 
@@ -130,6 +272,10 @@
       navLinks.classList.remove('nav__links--open');
       hamburger.classList.remove('nav__hamburger--open');
       hamburger.setAttribute('aria-expanded', 'false');
+      if (overlay) {
+        overlay.classList.remove('nav__overlay--visible');
+        overlay.setAttribute('aria-hidden', 'true');
+      }
       document.body.style.overflow = '';
     }
 
@@ -159,6 +305,11 @@
           closeMobileMenu();
         }
       });
+
+      // Close menu when clicking the overlay
+      if (overlay) {
+        overlay.addEventListener('click', closeMobileMenu);
+      }
 
       // Close menu when clicking outside
       document.addEventListener('click', function (e) {
@@ -340,15 +491,18 @@
     const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     function showError(fieldId, message) {
+      // Error element IDs use the pattern: contactNameError, contactEmailError, etc.
       const errorEl = document.getElementById(fieldId + 'Error');
       const inputEl = document.getElementById(fieldId);
       if (errorEl) errorEl.textContent = message;
       if (inputEl) {
+        // Use form-textarea--error for textarea elements, form-input--error otherwise
+        const errorClass = (inputEl.tagName === 'TEXTAREA') ? 'form-textarea--error' : 'form-input--error';
         if (message) {
-          inputEl.classList.add('form-input--error');
+          inputEl.classList.add(errorClass);
           inputEl.setAttribute('aria-invalid', 'true');
         } else {
-          inputEl.classList.remove('form-input--error');
+          inputEl.classList.remove(errorClass);
           inputEl.setAttribute('aria-invalid', 'false');
         }
       }
@@ -403,12 +557,17 @@
       const validMessage = validateField(messageField);
 
       if (!validName || !validEmail || !validMessage) {
-        // Focus first invalid field
         if (!validName) nameField.focus();
         else if (!validEmail) emailField.focus();
         else messageField.focus();
         return;
       }
+
+      // Capture values BEFORE any reset
+      var nameVal = nameField.value.trim();
+      var emailVal = emailField.value.trim();
+      var subjectVal = subjectField.value.trim();
+      var messageVal = messageField.value.trim();
 
       // Show loading state
       submitBtn.classList.add('is-loading');
@@ -416,34 +575,31 @@
       successMsg.hidden = true;
       infoMsg.hidden = true;
 
-      // Build the mailto link with the form data
-      const mailtoUrl = buildMailto(
-        nameField.value.trim(),
-        emailField.value.trim(),
-        subjectField.value.trim(),
-        messageField.value.trim()
-      );
+      var mailtoUrl = buildMailto(nameVal, emailVal, subjectVal, messageVal);
 
-      // Simulate a brief processing delay, then hand off to email client.
-      // This is a frontend-only fallback (no backend SMTP configured).
-      // If a Spring Boot backend is added later, replace this with a fetch() to /api/contact.
+      // Hand off to the email client. No backend SMTP is configured.
+      // If a Spring Boot /api/contact endpoint is added later, replace this
+      // block with a fetch() call (see README for required SMTP env vars).
       setTimeout(function () {
         submitBtn.classList.remove('is-loading');
         submitBtn.disabled = false;
 
-        // Update the mailto link and show success message
-        if (mailtoLink) {
-          mailtoLink.setAttribute('href', mailtoUrl);
-        }
+        if (mailtoLink) { mailtoLink.setAttribute('href', mailtoUrl); }
         successMsg.hidden = false;
         infoMsg.hidden = false;
 
-        // Attempt to open the email client
-        window.location.href = mailtoUrl;
-
-        // Reset the form
         form.reset();
-      }, 700);
+
+        // Trigger the mail client AFTER the UI is updated. Using a slight
+        // delay avoids the navigation cancelling the form reset on some
+        // browsers, and lets the success message render first.
+        setTimeout(function () {
+          window.location.href = mailtoUrl;
+        }, 100);
+
+        // Move focus to the success message for screen readers
+        if (successMsg) { successMsg.focus && successMsg.focus(); }
+      }, 600);
     }
 
     function init() {
@@ -534,6 +690,7 @@
      INIT
      ===================================================================== */
   function init() {
+    Renderer.init();
     ThemeManager.init();
     Navigation.init();
     ScrollReveal.init();

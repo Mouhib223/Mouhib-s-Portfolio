@@ -3,38 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Mouhib Hlaili — Full-Stack Software Engineer specializing in .NET, Angular, Java & Quality Engineering. Based in Tunisia." />
-  <meta name="keywords" content="Mouhib Hlaili, Full-Stack Developer, Angular, .NET, Java, Spring Boot, Tunisia, Software Engineer" />
+  <meta name="description" content="Mouhib Hlaili — Full-Stack Software Engineer specializing in .NET, Angular, Java & Quality Engineering. Based in Tunisia. Open to collaboration." />
+  <meta name="keywords" content="Mouhib Hlaili, Full-Stack Developer, Angular, .NET, Java, Spring Boot, C#, Tunisia, Software Engineer, QA" />
   <meta name="author" content="Mouhib Hlaili" />
+  <meta name="theme-color" content="#0c1520" />
   <meta property="og:title" content="Mouhib Hlaili — Full-Stack Software Engineer" />
-  <meta property="og:description" content="Full-Stack Software Engineer | .NET, Angular, Java & Quality Engineering" />
+  <meta property="og:description" content="Full-Stack Software Engineer | .NET, Angular, Java & Quality Engineering. Open to any collaboration." />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <title>Mouhib Hlaili — Full-Stack Software Engineer</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="alternate icon" href="assets/favicon.svg" />
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/theme.css" />
   <link rel="stylesheet" href="assets/css/animations.css" />
 </head>
 <body>
 
+  <!-- Mobile menu overlay (required by JS) -->
+  <div class="nav__overlay" id="navOverlay" aria-hidden="true"></div>
+
   <!-- ===== NAVIGATION ===== -->
   <nav class="nav" id="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav__container">
       <a href="#home" class="nav__logo" aria-label="Mouhib Hlaili - Home">
-        <span class="nav__logo-bracket">&lt;</span>
-        <span class="nav__logo-name">MH</span>
-        <span class="nav__logo-bracket">/&gt;</span>
+        <span class="nav__logo-bracket">&lt;</span><span class="nav__logo-name">MH</span><span class="nav__logo-bracket">/&gt;</span>
       </a>
-
       <ul class="nav__links" id="navLinks" role="list">
         <li><a href="#home" class="nav__link" data-section="home">Home</a></li>
         <li><a href="#about" class="nav__link" data-section="about">About</a></li>
@@ -45,55 +44,60 @@
         <li><a href="#credentials" class="nav__link" data-section="credentials">Credentials</a></li>
         <li><a href="#contact" class="nav__link" data-section="contact">Contact</a></li>
       </ul>
-
       <div class="nav__actions">
-        <!-- Theme Toggle -->
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" title="Toggle dark/light mode">
-          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-          </svg>
-          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
         </button>
-
-        <!-- Hamburger -->
         <button class="nav__hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
-          <span class="nav__hamburger-line"></span>
-          <span class="nav__hamburger-line"></span>
-          <span class="nav__hamburger-line"></span>
+          <span class="nav__hamburger-line"></span><span class="nav__hamburger-line"></span><span class="nav__hamburger-line"></span>
         </button>
       </div>
     </div>
   </nav>
 
-  <!-- ===== HERO SECTION ===== -->
+  <!-- ===== HERO ===== -->
   <section class="hero" id="home" aria-labelledby="heroHeading">
-    <!-- Topographic SVG Background -->
     <div class="hero__topo" aria-hidden="true">
       <svg viewBox="0 0 1400 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <radialGradient id="heroGlow" cx="30%" cy="40%" r="60%">
-            <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.12"/>
-            <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+          <radialGradient id="heroGlow" cx="25%" cy="35%" r="55%">
+            <stop offset="0%" stop-color="#0fd6a0" stop-opacity="0.14"/>
+            <stop offset="100%" stop-color="#0fd6a0" stop-opacity="0"/>
           </radialGradient>
         </defs>
         <rect width="1400" height="800" fill="url(#heroGlow)"/>
-        <!-- Topo lines -->
-        <path d="M-100,400 Q200,250 400,350 T800,300 T1200,380 T1500,320" fill="none" stroke="var(--accent)" stroke-width="0.8" opacity="0.15"/>
-        <path d="M-100,450 Q200,300 400,400 T800,350 T1200,430 T1500,370" fill="none" stroke="var(--accent)" stroke-width="0.8" opacity="0.12"/>
-        <path d="M-100,500 Q200,350 400,450 T800,400 T1200,480 T1500,420" fill="none" stroke="var(--accent)" stroke-width="0.8" opacity="0.10"/>
-        <path d="M-100,350 Q200,200 400,300 T800,250 T1200,330 T1500,270" fill="none" stroke="var(--accent)" stroke-width="0.8" opacity="0.12"/>
-        <path d="M-100,300 Q250,150 450,260 T850,200 T1250,280 T1500,230" fill="none" stroke="var(--accent)" stroke-width="0.7" opacity="0.09"/>
-        <path d="M-100,550 Q250,400 450,510 T850,460 T1250,540 T1500,490" fill="none" stroke="var(--accent)" stroke-width="0.7" opacity="0.09"/>
-        <path d="M-100,250 Q300,100 500,200 T900,160 T1300,240 T1500,190" fill="none" stroke="var(--accent)" stroke-width="0.6" opacity="0.07"/>
-        <path d="M-100,600 Q300,450 500,560 T900,520 T1300,600 T1500,550" fill="none" stroke="var(--accent)" stroke-width="0.6" opacity="0.07"/>
-        <!-- Geometric dots -->
-        <circle cx="1100" cy="150" r="120" fill="none" stroke="var(--accent)" stroke-width="0.5" opacity="0.08"/>
-        <circle cx="1100" cy="150" r="90" fill="none" stroke="var(--accent)" stroke-width="0.5" opacity="0.06"/>
-        <circle cx="1100" cy="150" r="60" fill="none" stroke="var(--accent)" stroke-width="0.5" opacity="0.06"/>
-        <circle cx="200" cy="650" r="80" fill="none" stroke="var(--accent)" stroke-width="0.5" opacity="0.06"/>
-        <circle cx="200" cy="650" r="55" fill="none" stroke="var(--accent)" stroke-width="0.5" opacity="0.05"/>
+        <!-- Concentric topo lines -->
+        <g fill="none" stroke="#0fd6a0" stroke-width="0.7">
+          <path d="M-100,360 Q200,210 400,310 T800,260 T1200,340 T1500,280" opacity="0.22"/>
+          <path d="M-100,410 Q200,260 400,360 T800,310 T1200,390 T1500,330" opacity="0.18"/>
+          <path d="M-100,460 Q200,310 400,410 T800,360 T1200,440 T1500,380" opacity="0.15"/>
+          <path d="M-100,310 Q200,160 400,260 T800,210 T1200,290 T1500,230" opacity="0.16"/>
+          <path d="M-100,260 Q250,110 450,220 T850,160 T1250,240 T1500,190" opacity="0.12"/>
+          <path d="M-100,510 Q250,360 450,460 T850,410 T1250,490 T1500,440" opacity="0.12"/>
+          <path d="M-100,210 Q300,60 500,170 T900,130 T1300,210 T1500,160" opacity="0.10"/>
+          <path d="M-100,560 Q300,410 500,510 T900,470 T1300,550 T1500,500" opacity="0.10"/>
+          <path d="M-100,160 Q350,10 550,120 T950,80 T1350,160 T1500,110" opacity="0.08"/>
+          <path d="M-100,610 Q350,460 550,560 T950,520 T1350,600 T1500,550" opacity="0.08"/>
+        </g>
+        <!-- Geometric circles -->
+        <g fill="none" stroke="#0fd6a0">
+          <circle cx="1100" cy="140" r="130" stroke-width="0.5" opacity="0.10"/>
+          <circle cx="1100" cy="140" r="100" stroke-width="0.5" opacity="0.08"/>
+          <circle cx="1100" cy="140" r="70"  stroke-width="0.5" opacity="0.08"/>
+          <circle cx="1100" cy="140" r="40"  stroke-width="0.5" opacity="0.10"/>
+          <circle cx="180" cy="640" r="90"  stroke-width="0.5" opacity="0.08"/>
+          <circle cx="180" cy="640" r="60"  stroke-width="0.5" opacity="0.06"/>
+        </g>
+        <!-- Grid dots -->
+        <g fill="#0fd6a0">
+          <circle cx="540" cy="120" r="1.5" opacity="0.25"/>
+          <circle cx="760" cy="180" r="1.5" opacity="0.20"/>
+          <circle cx="980" cy="100" r="1.5" opacity="0.25"/>
+          <circle cx="280" cy="220" r="1.5" opacity="0.18"/>
+          <circle cx="1240" cy="560" r="1.5" opacity="0.18"/>
+          <circle cx="620" cy="680" r="1.5" opacity="0.20"/>
+        </g>
       </svg>
     </div>
 
@@ -103,13 +107,11 @@
           <span class="hero__status-dot" aria-hidden="true"></span>
           Open to any collaboration
         </div>
-
         <p class="hero__greeting">Hello, I'm</p>
         <h1 class="hero__name" id="heroHeading">
           <span class="hero__name-first">Mouhib</span>
           <span class="hero__name-last">Hlaili</span>
         </h1>
-
         <div class="hero__title-wrapper" aria-live="polite">
           <span class="hero__title-static">Full-Stack Software Engineer</span>
           <div class="hero__title-dynamic">
@@ -120,13 +122,11 @@
             <span class="hero__title-item">IoT &amp; Embedded Systems</span>
           </div>
         </div>
-
         <p class="hero__bio">
-          Software engineer from Tunisia with a passion for building scalable full-stack applications,
-          automated testing pipelines, and embedded systems. Currently pursuing Software &amp; Data Engineering
-          at ESPRIT while contributing to real-world fintech and VFX platforms.
+          Software engineer from Tunisia building scalable full-stack applications, automated testing
+          pipelines, and embedded systems. Currently pursuing Software &amp; Data Engineering at ESPRIT
+          while contributing to real-world fintech and VFX platforms.
         </p>
-
         <div class="hero__actions">
           <a href="#contact" class="btn btn--primary">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -137,193 +137,95 @@
             Download CV
           </a>
         </div>
-
         <div class="hero__socials">
-          <a href="https://github.com/Mouhib223" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub Profile">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/hlaili-mouhib/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <a href="mailto:Mouhib.HLAILI@esprit.tn" class="social-link" aria-label="Send email">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </a>
+          <a href="https://github.com/Mouhib223" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub Profile"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+          <a href="https://www.linkedin.com/in/hlaili-mouhib/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="mailto:Mouhib.HLAILI@esprit.tn" class="social-link" aria-label="Send email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
         </div>
       </div>
 
       <div class="hero__visual">
-        <!-- Geometric photo frame -->
         <div class="hero__photo-frame" aria-hidden="true">
           <div class="hero__photo-outer">
             <div class="hero__photo-inner">
               <div class="hero__photo-avatar">
-                <!-- SVG Avatar placeholder — replace img tag below with photo when available -->
                 <svg class="hero__avatar-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="Mouhib Hlaili" role="img">
                   <defs>
-                    <linearGradient id="avatarBg" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stop-color="#0d1f2d"/>
-                      <stop offset="100%" stop-color="#1a3a4a"/>
-                    </linearGradient>
-                    <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stop-color="var(--accent-dark)"/>
-                      <stop offset="100%" stop-color="var(--accent)"/>
-                    </linearGradient>
-                    <clipPath id="avatarCircle">
-                      <circle cx="100" cy="100" r="98"/>
-                    </clipPath>
+                    <linearGradient id="avatarBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0d1f2d"/><stop offset="100%" stop-color="#1a3a4a"/></linearGradient>
+                    <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#09a278"/><stop offset="100%" stop-color="#0fd6a0"/></linearGradient>
+                    <clipPath id="avatarCircle"><circle cx="100" cy="100" r="98"/></clipPath>
                   </defs>
                   <circle cx="100" cy="100" r="100" fill="url(#avatarBg)"/>
-                  <!-- Body -->
                   <ellipse cx="100" cy="165" rx="55" ry="40" fill="url(#shirtGrad)" clip-path="url(#avatarCircle)"/>
-                  <!-- Collar -->
                   <polygon points="85,135 100,145 115,135 110,160 90,160" fill="#0a1826" opacity="0.5"/>
-                  <!-- Head -->
                   <ellipse cx="100" cy="90" rx="38" ry="42" fill="#d4a574"/>
-                  <!-- Hair -->
                   <ellipse cx="100" cy="55" rx="38" ry="18" fill="#2c1810"/>
                   <rect x="62" y="55" width="76" height="15" fill="#2c1810"/>
-                  <!-- Eyes -->
                   <ellipse cx="86" cy="88" rx="5" ry="6" fill="white"/>
                   <ellipse cx="114" cy="88" rx="5" ry="6" fill="white"/>
                   <circle cx="87" cy="89" r="3.5" fill="#2c1810"/>
                   <circle cx="115" cy="89" r="3.5" fill="#2c1810"/>
                   <circle cx="88" cy="88" r="1.2" fill="white"/>
                   <circle cx="116" cy="88" r="1.2" fill="white"/>
-                  <!-- Eyebrows -->
                   <path d="M79,80 Q87,76 95,79" stroke="#2c1810" stroke-width="2.5" fill="none" stroke-linecap="round"/>
                   <path d="M105,79 Q113,76 121,80" stroke="#2c1810" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                  <!-- Nose -->
                   <path d="M97,95 Q100,102 103,95" stroke="#b8895a" stroke-width="1.5" fill="none"/>
-                  <!-- Mouth - smile -->
                   <path d="M88,108 Q100,116 112,108" stroke="#b8895a" stroke-width="2" fill="none" stroke-linecap="round"/>
-                  <!-- Ears -->
                   <ellipse cx="62" cy="93" rx="6" ry="8" fill="#d4a574"/>
                   <ellipse cx="138" cy="93" rx="6" ry="8" fill="#d4a574"/>
                 </svg>
               </div>
             </div>
           </div>
-          <!-- Decorative rings -->
           <div class="hero__photo-ring hero__photo-ring--1" aria-hidden="true"></div>
           <div class="hero__photo-ring hero__photo-ring--2" aria-hidden="true"></div>
-          <!-- Corner accents -->
           <div class="hero__photo-corner hero__photo-corner--tl" aria-hidden="true"></div>
           <div class="hero__photo-corner hero__photo-corner--br" aria-hidden="true"></div>
         </div>
-
-        <!-- Floating stat cards -->
-        <div class="hero__stat hero__stat--experience" aria-label="2 years experience">
-          <span class="hero__stat-number">2+</span>
-          <span class="hero__stat-label">Years Exp.</span>
-        </div>
-        <div class="hero__stat hero__stat--projects" aria-label="6 featured projects">
-          <span class="hero__stat-number">6+</span>
-          <span class="hero__stat-label">Projects</span>
-        </div>
+        <div class="hero__stat hero__stat--experience" aria-label="2 years experience"><span class="hero__stat-number">2+</span><span class="hero__stat-label">Years Exp.</span></div>
+        <div class="hero__stat hero__stat--projects" aria-label="6 featured projects"><span class="hero__stat-number">6+</span><span class="hero__stat-label">Projects</span></div>
       </div>
     </div>
 
-    <!-- Scroll indicator -->
-    <a href="#about" class="hero__scroll" aria-label="Scroll to About section">
-      <div class="hero__scroll-wheel"></div>
-    </a>
+    <a href="#about" class="hero__scroll" aria-label="Scroll to About section"><div class="hero__scroll-wheel"></div></a>
   </section>
-
-  <!-- ===== ABOUT SECTION ===== -->
-  <section class="section about" id="about" aria-labelledby="aboutHeading">
+  <!-- ===== ABOUT ===== -->
+  <section class="section section--alt about" id="about" aria-labelledby="aboutHeading">
     <div class="section__container">
       <div class="section__header">
         <span class="section__label">Get to know me</span>
         <h2 class="section__title" id="aboutHeading">About Me</h2>
         <div class="section__divider" aria-hidden="true"></div>
       </div>
-
       <div class="about__grid">
         <div class="about__info">
           <div class="about__text">
-            <p>
-              I'm <strong>Mouhib Hlaili</strong>, a software engineer from Tunisia with a dual background in
-              <strong>Full-Stack Development</strong> and <strong>IoT &amp; Embedded Systems</strong>. I currently pursue
-              Software &amp; Data Engineering (night programme) at ESPRIT while holding hands-on experience from
-              internships in fintech, VFX platforms, and quality assurance.
-            </p>
-            <p>
-              I thrive at the intersection of clean architecture, automated quality, and user-focused design —
-              whether building broker simulation engines in .NET, designing B2B SaaS platforms, or writing
-              regression suites with Selenium. I write code that ships, tests it thoroughly, and documents it clearly.
-            </p>
-            <p>
-              Outside of work I explore embedded development (STM32, FreeRTOS), contribute to open-source, and
-              keep up with the evolving AI tooling landscape.
-            </p>
+            <p>I'm <strong>Mouhib Hlaili</strong>, a software engineer from Tunisia with a dual background in <strong>Full-Stack Development</strong> and <strong>IoT &amp; Embedded Systems</strong>. I'm currently pursuing Software &amp; Data Engineering (night programme) at ESPRIT while holding hands-on experience from internships in fintech, VFX platforms, and quality assurance.</p>
+            <p>I thrive at the intersection of clean architecture, automated quality, and user-focused design — whether building broker simulation engines in .NET, designing B2B SaaS platforms, or writing regression suites with Selenium. I write code that ships, test it thoroughly, and document it clearly.</p>
+            <p>Outside of work I explore embedded development (STM32, FreeRTOS), contribute to open-source, and keep up with the evolving AI tooling landscape.</p>
           </div>
-
           <div class="about__meta">
-            <div class="about__meta-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>Tunis, Tunisia</span>
-            </div>
-            <div class="about__meta-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
-              <span>+216 — Available on request</span>
-            </div>
-            <div class="about__meta-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <a href="mailto:Mouhib.HLAILI@esprit.tn">Mouhib.HLAILI@esprit.tn</a>
-            </div>
+            <div class="about__meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Tunis, Tunisia</span></div>
+            <div class="about__meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg><span>+216 — Available on request</span></div>
+            <div class="about__meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:Mouhib.HLAILI@esprit.tn">Mouhib.HLAILI@esprit.tn</a></div>
           </div>
-
           <a href="assets/Mouhib_Hlaili_CV.pdf" class="btn btn--primary" download>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download CV
           </a>
         </div>
-
-        <!-- Engineering Principles (replaces fake testimonials) -->
         <div class="about__principles">
           <h3 class="about__principles-title">Engineering Principles</h3>
-          <div class="principle-card">
-            <div class="principle-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </div>
-            <div>
-              <h4>Clean Code First</h4>
-              <p>Readable, maintainable code is not a luxury — it's a professional obligation. Every PR should tell a story.</p>
-            </div>
-          </div>
-          <div class="principle-card">
-            <div class="principle-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            </div>
-            <div>
-              <h4>Test-Driven Confidence</h4>
-              <p>Quality assurance is a first-class concern, not an afterthought. Ship with confidence, not hope.</p>
-            </div>
-          </div>
-          <div class="principle-card">
-            <div class="principle-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            </div>
-            <div>
-              <h4>Continuous Learning</h4>
-              <p>Technology evolves fast. Staying curious, adapting to new stacks, and sharing knowledge is the engineering mindset.</p>
-            </div>
-          </div>
-          <div class="principle-card">
-            <div class="principle-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div>
-              <h4>Deliver on Time</h4>
-              <p>Deadlines are commitments. Scope management, clear communication, and iterative delivery keep projects on track.</p>
-            </div>
-          </div>
+          <div class="principle-card"><div class="principle-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><h4>Clean Code First</h4><p>Readable, maintainable code is not a luxury — it's a professional obligation. Every PR should tell a story.</p></div></div>
+          <div class="principle-card"><div class="principle-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></div><div><h4>Test-Driven Confidence</h4><p>Quality assurance is a first-class concern, not an afterthought. Ship with confidence, not hope.</p></div></div>
+          <div class="principle-card"><div class="principle-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div><h4>Continuous Learning</h4><p>Technology evolves fast. Staying curious, adapting to new stacks, and sharing knowledge is the engineering mindset.</p></div></div>
+          <div class="principle-card"><div class="principle-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><h4>Deliver on Time</h4><p>Deadlines are commitments. Scope management, clear communication, and iterative delivery keep projects on track.</p></div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== EXPERIENCE SECTION ===== -->
+  <!-- ===== EXPERIENCE ===== -->
   <section class="section experience" id="experience" aria-labelledby="experienceHeading">
     <div class="section__container">
       <div class="section__header">
@@ -331,26 +233,15 @@
         <h2 class="section__title" id="experienceHeading">Work Experience</h2>
         <div class="section__divider" aria-hidden="true"></div>
       </div>
+      <div class="timeline" id="experienceList" role="list">
 
-      <div class="timeline" role="list">
-
-        <!-- Nexus Global Banking -->
         <article class="timeline__item" role="listitem">
-          <div class="timeline__marker" aria-hidden="true">
-            <div class="timeline__dot"></div>
-            <div class="timeline__line"></div>
-          </div>
+          <div class="timeline__marker" aria-hidden="true"><div class="timeline__dot"></div><div class="timeline__line"></div></div>
           <div class="timeline__card">
             <div class="timeline__card-header">
-              <div>
-                <h3 class="timeline__role">Front-End Developer</h3>
-                <p class="timeline__company">Nexus Global Banking</p>
-              </div>
+              <div><h3 class="timeline__role">Front-End Developer</h3><p class="timeline__company">Nexus Global Banking</p></div>
               <div class="timeline__meta">
-                <span class="timeline__date">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                  Dec 2025 – Feb 2026
-                </span>
+                <span class="timeline__date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Dec 2025 – Feb 2026</span>
                 <span class="timeline__badge timeline__badge--current">Recent</span>
               </div>
             </div>
@@ -360,264 +251,125 @@
               <li>Implemented strict accessibility standards and cross-browser compatibility for banking dashboards.</li>
               <li>Participated in code reviews, maintaining high code quality and adherence to team standards.</li>
             </ul>
-            <div class="timeline__tags">
-              <span class="tag">Angular</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">REST APIs</span>
-              <span class="tag">SCSS</span>
-            </div>
+            <div class="timeline__tags"><span class="tag">Angular</span><span class="tag">TypeScript</span><span class="tag">REST APIs</span><span class="tag">SCSS</span></div>
           </div>
         </article>
 
-        <!-- Vision Age VFX -->
         <article class="timeline__item" role="listitem">
-          <div class="timeline__marker" aria-hidden="true">
-            <div class="timeline__dot"></div>
-            <div class="timeline__line"></div>
-          </div>
+          <div class="timeline__marker" aria-hidden="true"><div class="timeline__dot"></div><div class="timeline__line"></div></div>
           <div class="timeline__card">
             <div class="timeline__card-header">
-              <div>
-                <h3 class="timeline__role">Team Lead &amp; Full Stack Developer Intern</h3>
-                <p class="timeline__company">Vision Age VFX</p>
-              </div>
+              <div><h3 class="timeline__role">Team Lead &amp; Full Stack Developer Intern</h3><p class="timeline__company">Vision Age VFX</p></div>
               <div class="timeline__meta">
-                <span class="timeline__date">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                  Jun 2025 – Jan 2026
-                </span>
+                <span class="timeline__date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Jun 2025 – Jan 2026</span>
               </div>
             </div>
             <ul class="timeline__duties">
               <li>Led a team of developers in designing and delivering a B2B platform for VFX service management.</li>
-              <li>Architected the full-stack solution using React (frontend), NestJS (backend), and PostgreSQL (database).</li>
+              <li>Architected the full-stack solution with a React frontend, NestJS backend, and PostgreSQL database.</li>
               <li>Conducted sprint planning, daily standups, and code reviews following agile methodology.</li>
               <li>Delivered project milestones on schedule while mentoring junior team members.</li>
             </ul>
-            <div class="timeline__tags">
-              <span class="tag">React</span>
-              <span class="tag">NestJS</span>
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">Team Lead</span>
-              <span class="tag">Agile</span>
-            </div>
+            <div class="timeline__tags"><span class="tag">React</span><span class="tag">NestJS</span><span class="tag">PostgreSQL</span><span class="tag">Team Lead</span><span class="tag">Agile</span></div>
           </div>
         </article>
 
-        <!-- Linedata QA -->
         <article class="timeline__item" role="listitem">
-          <div class="timeline__marker" aria-hidden="true">
-            <div class="timeline__dot"></div>
-            <div class="timeline__line"></div>
-          </div>
+          <div class="timeline__marker" aria-hidden="true"><div class="timeline__dot"></div><div class="timeline__line"></div></div>
           <div class="timeline__card">
             <div class="timeline__card-header">
-              <div>
-                <h3 class="timeline__role">QA Analyst</h3>
-                <p class="timeline__company">Linedata</p>
-              </div>
+              <div><h3 class="timeline__role">QA Analyst</h3><p class="timeline__company">Linedata</p></div>
               <div class="timeline__meta">
-                <span class="timeline__date">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                  Sep 2024 – Dec 2024
-                </span>
+                <span class="timeline__date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Sep 2024 – Dec 2024</span>
               </div>
             </div>
             <ul class="timeline__duties">
               <li>Designed, executed, and maintained test cases for a financial trading platform using Zephyr and Jira.</li>
-              <li>Developed automated regression tests using Selenium WebDriver and MSTest framework.</li>
+              <li>Developed automated regression tests using Selenium WebDriver and the MSTest framework.</li>
               <li>Performed functional, regression, and smoke testing on broker execution modules.</li>
               <li>Reported and tracked defects with detailed reproduction steps, collaborating with dev teams to resolve issues quickly.</li>
             </ul>
-            <div class="timeline__tags">
-              <span class="tag">Selenium</span>
-              <span class="tag">MSTest</span>
-              <span class="tag">Jira</span>
-              <span class="tag">Zephyr</span>
-              <span class="tag">C#</span>
-            </div>
+            <div class="timeline__tags"><span class="tag">Selenium</span><span class="tag">MSTest</span><span class="tag">Jira</span><span class="tag">Zephyr</span><span class="tag">C#</span></div>
           </div>
         </article>
 
-        <!-- Linedata Dev Intern -->
         <article class="timeline__item" role="listitem">
-          <div class="timeline__marker" aria-hidden="true">
-            <div class="timeline__dot"></div>
-          </div>
+          <div class="timeline__marker" aria-hidden="true"><div class="timeline__dot"></div></div>
           <div class="timeline__card">
             <div class="timeline__card-header">
-              <div>
-                <h3 class="timeline__role">Software Developer Intern — Broker Simulator Execution</h3>
-                <p class="timeline__company">Linedata</p>
-              </div>
+              <div><h3 class="timeline__role">Software Developer Intern — Broker Simulator Execution</h3><p class="timeline__company">Linedata</p></div>
               <div class="timeline__meta">
-                <span class="timeline__date">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                  Feb 2024 – Aug 2024
-                </span>
+                <span class="timeline__date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Feb 2024 – Aug 2024</span>
                 <span class="timeline__badge">6 months</span>
               </div>
             </div>
             <ul class="timeline__duties">
               <li>Developed a broker order execution simulator using .NET, ASP.NET Web API, and the FIX protocol.</li>
-              <li>Built Angular-based dashboards for real-time order lifecycle monitoring with SQL Server backend.</li>
+              <li>Built Angular-based dashboards for real-time order lifecycle monitoring with a SQL Server backend.</li>
               <li>Implemented FIX session management, order routing, and execution report handling.</li>
               <li>Wrote comprehensive unit and integration tests using xUnit and Postman for API validation.</li>
             </ul>
-            <div class="timeline__tags">
-              <span class="tag">.NET</span>
-              <span class="tag">ASP.NET Web API</span>
-              <span class="tag">Angular</span>
-              <span class="tag">SQL Server</span>
-              <span class="tag">FIX Protocol</span>
-              <span class="tag">xUnit</span>
-            </div>
+            <div class="timeline__tags"><span class="tag">.NET</span><span class="tag">ASP.NET Web API</span><span class="tag">Angular</span><span class="tag">SQL Server</span><span class="tag">FIX Protocol</span><span class="tag">xUnit</span></div>
           </div>
         </article>
 
       </div>
     </div>
   </section>
-
-  <!-- ===== SKILLS SECTION ===== -->
-  <section class="section skills" id="skills" aria-labelledby="skillsHeading">
+  <!-- ===== SKILLS ===== -->
+  <section class="section section--alt skills" id="skills" aria-labelledby="skillsHeading">
     <div class="section__container">
       <div class="section__header">
         <span class="section__label">Technical toolkit</span>
         <h2 class="section__title" id="skillsHeading">Skills &amp; Technologies</h2>
         <div class="section__divider" aria-hidden="true"></div>
       </div>
-
       <div class="skills__grid">
 
         <div class="skill-category">
-          <h3 class="skill-category__title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            Languages
-          </h3>
-          <div class="skill-tags">
-            <span class="skill-tag skill-tag--primary">C#</span>
-            <span class="skill-tag skill-tag--primary">TypeScript</span>
-            <span class="skill-tag skill-tag--primary">Java</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">C</span>
-            <span class="skill-tag">C++</span>
-            <span class="skill-tag">PHP</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">Embedded C</span>
-          </div>
+          <h3 class="skill-category__title"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Languages</h3>
+          <div class="skill-tags"><span class="skill-tag skill-tag--primary">C#</span><span class="skill-tag skill-tag--primary">TypeScript</span><span class="skill-tag skill-tag--primary">Java</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Python</span><span class="skill-tag">C</span><span class="skill-tag">C++</span><span class="skill-tag">PHP</span><span class="skill-tag">SQL</span><span class="skill-tag">Embedded C</span></div>
         </div>
 
         <div class="skill-category">
-          <h3 class="skill-category__title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-            Frontend
-          </h3>
-          <div class="skill-tags">
-            <span class="skill-tag skill-tag--primary">Angular</span>
-            <span class="skill-tag skill-tag--primary">React</span>
-            <span class="skill-tag">HTML5</span>
-            <span class="skill-tag">CSS3 / SCSS</span>
-            <span class="skill-tag">RxJS</span>
-            <span class="skill-tag">NgRx</span>
-            <span class="skill-tag">Material UI</span>
-          </div>
+          <h3 class="skill-category__title"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Frontend</h3>
+          <div class="skill-tags"><span class="skill-tag skill-tag--primary">Angular</span><span class="skill-tag skill-tag--primary">React</span><span class="skill-tag">HTML5</span><span class="skill-tag">CSS3 / SCSS</span><span class="skill-tag">RxJS</span><span class="skill-tag">NgRx</span><span class="skill-tag">Material UI</span></div>
         </div>
 
         <div class="skill-category">
-          <h3 class="skill-category__title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-            Backend
-          </h3>
-          <div class="skill-tags">
-            <span class="skill-tag skill-tag--primary">.NET / ASP.NET</span>
-            <span class="skill-tag skill-tag--primary">Spring Boot</span>
-            <span class="skill-tag skill-tag--primary">NestJS</span>
-            <span class="skill-tag">Node.js</span>
-            <span class="skill-tag">REST APIs</span>
-            <span class="skill-tag">FIX Protocol</span>
-            <span class="skill-tag">WebSockets</span>
-          </div>
+          <h3 class="skill-category__title"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>Backend</h3>
+          <div class="skill-tags"><span class="skill-tag skill-tag--primary">.NET / ASP.NET</span><span class="skill-tag skill-tag--primary">Spring Boot</span><span class="skill-tag skill-tag--primary">NestJS</span><span class="skill-tag">Node.js</span><span class="skill-tag">REST APIs</span><span class="skill-tag">FIX Protocol</span><span class="skill-tag">WebSockets</span></div>
         </div>
 
         <div class="skill-category">
-          <h3 class="skill-category__title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-            Databases
-          </h3>
-          <div class="skill-tags">
-            <span class="skill-tag skill-tag--primary">SQL Server</span>
-            <span class="skill-tag">PostgreSQL</span>
-            <span class="skill-tag">MySQL</span>
-            <span class="skill-tag">MongoDB</span>
-            <span class="skill-tag">Hibernate</span>
-          </div>
+          <h3 class="skill-category__title"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>Databases</h3>
+          <div class="skill-tags"><span class="skill-tag skill-tag--primary">SQL Server</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MySQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">Hibernate / JPA</span></div>
         </div>
 
         <div class="skill-category">
-          <h3 class="skill-category__title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            QA &amp; Testing
-          </h3>
-          <div class="skill-tags">
-            <span class="skill-tag skill-tag--primary">Selenium</span>
-            <span class="skill-tag skill-tag--primary">MSTest</span>
-            <span class="skill-tag">xUnit</span>
-            <span class="skill-tag">JUnit</span>
-            <span class="skill-tag">Postman</span>
-            <span class="skill-tag">Jira</span>
-            <span class="skill-tag">Zephyr</span>
-          </div>
+          <h3 class="skill-category__title"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>QA &amp; Testing</h3>
+          <div class="skill-tags"><span class="skill-tag skill-tag--primary">Selenium WebDriver</span><span class="skill-tag skill-tag--primary">MSTest</span><span class="skill-tag">xUnit</span><span class="skill-tag">JUnit</span><span class="skill-tag">Postman</span><span class="skill-tag">Jira</span><span class="skill-tag">Zephyr Scale</span></div>
         </div>
 
         <div class="skill-category">
-          <h3 class="skill-category__title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-            DevOps &amp; Tools
-          </h3>
-          <div class="skill-tags">
-            <span class="skill-tag skill-tag--primary">Git / GitHub</span>
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">Azure</span>
-            <span class="skill-tag">Maven</span>
-            <span class="skill-tag">VS Code</span>
-            <span class="skill-tag">Visual Studio</span>
-          </div>
+          <h3 class="skill-category__title"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>DevOps &amp; Tools</h3>
+          <div class="skill-tags"><span class="skill-tag skill-tag--primary">Git / GitHub</span><span class="skill-tag">Docker</span><span class="skill-tag">Azure</span><span class="skill-tag">Maven</span><span class="skill-tag">Visual Studio</span><span class="skill-tag">VS Code</span></div>
         </div>
 
         <div class="skill-category">
-          <h3 class="skill-category__title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
-            Embedded &amp; IoT
-          </h3>
-          <div class="skill-tags">
-            <span class="skill-tag skill-tag--primary">STM32</span>
-            <span class="skill-tag skill-tag--primary">Embedded C</span>
-            <span class="skill-tag">FreeRTOS</span>
-            <span class="skill-tag">Arduino</span>
-            <span class="skill-tag">MQTT</span>
-            <span class="skill-tag">Proteus</span>
-          </div>
+          <h3 class="skill-category__title"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>Embedded &amp; IoT</h3>
+          <div class="skill-tags"><span class="skill-tag skill-tag--primary">STM32</span><span class="skill-tag skill-tag--primary">Embedded C</span><span class="skill-tag">FreeRTOS</span><span class="skill-tag">Arduino</span><span class="skill-tag">MQTT</span><span class="skill-tag">Proteus</span></div>
         </div>
 
         <div class="skill-category">
-          <h3 class="skill-category__title">
-            <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            Languages
-          </h3>
-          <div class="skill-tags">
-            <span class="skill-tag skill-tag--lang">Arabic <em>Native</em></span>
-            <span class="skill-tag skill-tag--lang">French <em>Fluent</em></span>
-            <span class="skill-tag skill-tag--lang">English <em>Professional</em></span>
-          </div>
+          <h3 class="skill-category__title"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Spoken Languages</h3>
+          <div class="skill-tags"><span class="skill-tag skill-tag--lang">Arabic <em>Native</em></span><span class="skill-tag skill-tag--lang">French <em>Fluent</em></span><span class="skill-tag skill-tag--lang">English <em>Professional</em></span></div>
         </div>
 
       </div>
     </div>
   </section>
-
-  <!-- ===== PROJECTS SECTION ===== -->
+  <!-- ===== PROJECTS ===== -->
   <section class="section projects" id="projects" aria-labelledby="projectsHeading">
     <div class="section__container">
       <div class="section__header">
@@ -625,8 +377,6 @@
         <h2 class="section__title" id="projectsHeading">Featured Projects</h2>
         <div class="section__divider" aria-hidden="true"></div>
       </div>
-
-      <!-- Project Filters -->
       <div class="projects__filters" role="group" aria-label="Filter projects by technology">
         <button class="filter-btn filter-btn--active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
@@ -638,393 +388,146 @@
       <div class="projects__grid" id="projectsGrid">
 
         <!-- Linedata Broker Simulator -->
-        <article class="project-card" data-category="fullstack dotnet" role="article">
+        <article class="project-card" data-category="fullstack dotnet">
           <div class="project-card__visual project-card__visual--fintech">
-            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" aria-label="Broker Simulator Illustration" role="img">
-              <rect width="400" height="220" fill="#0d1b2a"/>
-              <rect x="20" y="20" width="360" height="180" rx="8" fill="#0a2540" stroke="#10b981" stroke-width="0.5" opacity="0.8"/>
-              <!-- Chart line -->
-              <polyline points="30,160 70,130 110,145 150,90 190,110 230,70 270,95 310,60 350,80" fill="none" stroke="#10b981" stroke-width="2"/>
-              <polyline points="30,160 70,130 110,145 150,90 190,110 230,70 270,95 310,60 350,80 350,200 30,200" fill="#10b981" opacity="0.08"/>
-              <!-- Order rows -->
-              <rect x="30" y="30" width="100" height="8" rx="2" fill="#10b981" opacity="0.3"/>
-              <rect x="140" y="30" width="60" height="8" rx="2" fill="#10b981" opacity="0.2"/>
-              <rect x="210" y="30" width="80" height="8" rx="2" fill="#10b981" opacity="0.15"/>
-              <rect x="30" y="45" width="100" height="8" rx="2" fill="#ffffff" opacity="0.08"/>
-              <rect x="140" y="45" width="60" height="8" rx="2" fill="#ffffff" opacity="0.06"/>
-              <rect x="210" y="45" width="80" height="8" rx="2" fill="#ef4444" opacity="0.2"/>
-              <!-- FIX label -->
-              <text x="320" y="200" fill="#10b981" font-size="11" font-family="JetBrains Mono, monospace" opacity="0.7">FIX 4.4</text>
-            </svg>
+            <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="225" fill="#071525"/><rect x="18" y="18" width="364" height="189" rx="8" fill="#091e35" stroke="#0fd6a0" stroke-width="0.5" opacity="0.7"/><polyline points="30,170 75,135 120,150 165,92 210,115 255,72 300,98 345,58 370,74" fill="none" stroke="#0fd6a0" stroke-width="2"/><polyline points="30,170 75,135 120,150 165,92 210,115 255,72 300,98 345,58 370,74 370,210 30,210" fill="#0fd6a0" opacity="0.06"/><rect x="30" y="28" width="110" height="8" rx="2" fill="#0fd6a0" opacity="0.3"/><rect x="148" y="28" width="65" height="8" rx="2" fill="#0fd6a0" opacity="0.2"/><rect x="220" y="28" width="85" height="8" rx="2" fill="#0fd6a0" opacity="0.15"/><rect x="30" y="44" width="110" height="8" rx="2" fill="#ffffff" opacity="0.06"/><rect x="148" y="44" width="65" height="8" rx="2" fill="#ffffff" opacity="0.05"/><rect x="220" y="44" width="85" height="8" rx="2" fill="#ef4444" opacity="0.25"/><text x="330" y="210" fill="#0fd6a0" font-size="11" font-family="JetBrains Mono, monospace" opacity="0.7">FIX 4.4</text><circle cx="345" cy="58" r="5" fill="#0fd6a0" opacity="0.6"/></svg>
           </div>
           <div class="project-card__content">
             <div class="project-card__header">
               <h3 class="project-card__title">Broker Simulator Execution</h3>
               <div class="project-card__links">
-                <a href="https://github.com/Mouhib223/RulesSimulator" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View RulesSimulator on GitHub">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                </a>
+                <a href="https://github.com/Mouhib223/RulesSimulator" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="RulesSimulator on GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
               </div>
             </div>
-            <p class="project-card__description">
-              Full-stack broker order execution simulator for Linedata's financial trading platform.
-              Implemented FIX protocol session management, order routing logic, and real-time Angular dashboards
-              backed by a .NET Web API and SQL Server.
-            </p>
-            <div class="project-card__tags">
-              <span class="tag">.NET</span>
-              <span class="tag">ASP.NET Web API</span>
-              <span class="tag">Angular</span>
-              <span class="tag">SQL Server</span>
-              <span class="tag">FIX Protocol</span>
-              <span class="tag">C#</span>
+            <p class="project-card__description">Full-stack broker order execution simulator built during a 6-month Linedata internship. Implemented FIX protocol session management, order routing, and execution report handling. Angular dashboards display real-time order lifecycle data backed by an ASP.NET Web API and SQL Server.</p>
+            <div class="project-card__tags"><span class="tag">.NET</span><span class="tag">ASP.NET Web API</span><span class="tag">Angular</span><span class="tag">SQL Server</span><span class="tag">FIX Protocol</span><span class="tag">C#</span></div>
+          </div>
+        </article>
+
+        <!-- Simple-Fix-Acceptor -->
+        <article class="project-card" data-category="dotnet">
+          <div class="project-card__visual project-card__visual--fix">
+            <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="225" fill="#07121f"/><rect x="20" y="20" width="360" height="185" rx="6" fill="#091a2e" stroke="#3b82f6" stroke-width="0.5" opacity="0.7"/><rect x="30" y="32" width="340" height="16" rx="3" fill="#0a2040"/><text x="40" y="43" fill="#3b82f6" font-size="9" font-family="JetBrains Mono, monospace">SESSION: LOCALHOST:9876 | STATE: LOGON</text><text x="30" y="72" fill="#0fd6a0" font-size="8.5" font-family="JetBrains Mono, monospace">8=FIX.4.4|35=D|49=SENDER|56=TARGET|</text><text x="30" y="87" fill="#0fd6a0" font-size="8.5" font-family="JetBrains Mono, monospace">11=ORD001|55=AAPL|54=1|38=100|40=2</text><text x="30" y="102" fill="#7c96b0" font-size="8.5" font-family="JetBrains Mono, monospace">8=FIX.4.4|35=8|49=TARGET|39=2|</text><text x="30" y="117" fill="#7c96b0" font-size="8.5" font-family="JetBrains Mono, monospace">14=100|31=150.25|32=100 ← ExecReport</text><rect x="30" y="130" width="340" height="1" fill="#3b82f6" opacity="0.2"/><text x="30" y="150" fill="#f59e0b" font-size="8.5" font-family="JetBrains Mono, monospace">QuickFIX .NET  |  DLL: QuickFix.FIX44</text><text x="30" y="165" fill="#f59e0b" font-size="8.5" font-family="JetBrains Mono, monospace">Acceptor Mode  |  Config: simpleacc.cfg</text><rect x="310" y="185" width="60" height="14" rx="3" fill="#0fd6a0" opacity="0.15"/><text x="340" y="195" fill="#0fd6a0" font-size="8" text-anchor="middle" font-family="JetBrains Mono, monospace">C# / .NET</text></svg>
+          </div>
+          <div class="project-card__content">
+            <div class="project-card__header">
+              <h3 class="project-card__title">Simple FIX Acceptor</h3>
+              <div class="project-card__links">
+                <a href="https://github.com/Mouhib223/Simple-Fix-Acceptor" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Simple-Fix-Acceptor on GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+              </div>
             </div>
+            <p class="project-card__description">A C# .NET console application implementing a FIX protocol acceptor using QuickFIX.NET. Accepts inbound FIX 4.0 and FIX 4.4 sessions, handles order messages, and logs execution reports. Includes configuration via simpleacc.cfg and distributed QuickFIX DLLs.</p>
+            <div class="project-card__tags"><span class="tag">C#</span><span class="tag">.NET</span><span class="tag">FIX Protocol</span><span class="tag">QuickFIX.NET</span><span class="tag">FIX 4.4</span></div>
           </div>
         </article>
 
         <!-- Tiki-Taka-Toe -->
-        <article class="project-card" data-category="fullstack" role="article">
+        <article class="project-card" data-category="fullstack">
           <div class="project-card__visual project-card__visual--game">
-            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" aria-label="Tiki-Taka-Toe game illustration" role="img">
-              <rect width="400" height="220" fill="#0d1b2a"/>
-              <!-- Grid -->
-              <line x1="100" y1="40" x2="100" y2="180" stroke="#10b981" stroke-width="2" opacity="0.6"/>
-              <line x1="180" y1="40" x2="180" y2="180" stroke="#10b981" stroke-width="2" opacity="0.6"/>
-              <line x1="40" y1="100" x2="220" y2="100" stroke="#10b981" stroke-width="2" opacity="0.6"/>
-              <line x1="40" y1="140" x2="220" y2="140" stroke="#10b981" stroke-width="2" opacity="0.6"/>
-              <!-- X marks -->
-              <line x1="55" y1="55" x2="85" y2="85" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
-              <line x1="85" y1="55" x2="55" y2="85" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/>
-              <!-- O marks -->
-              <circle cx="140" cy="70" r="18" fill="none" stroke="#10b981" stroke-width="3" opacity="0.9"/>
-              <circle cx="200" cy="120" r="18" fill="none" stroke="#10b981" stroke-width="3" opacity="0.9"/>
-              <!-- Player card -->
-              <rect x="250" y="40" width="130" height="50" rx="6" fill="#0a2540" stroke="#10b981" stroke-width="0.5"/>
-              <circle cx="270" cy="65" r="12" fill="#10b981" opacity="0.3"/>
-              <rect x="290" y="57" width="75" height="8" rx="3" fill="#ffffff" opacity="0.15"/>
-              <rect x="290" y="70" width="50" height="6" rx="3" fill="#10b981" opacity="0.4"/>
-              <!-- Score area -->
-              <rect x="250" y="105" width="130" height="30" rx="6" fill="#0a2540" stroke="#ffffff" stroke-width="0.3" opacity="0.5"/>
-              <text x="265" y="124" fill="#10b981" font-size="12" font-family="JetBrains Mono, monospace">⚽ 2 : 1</text>
-              <text x="280" y="185" fill="#6b7280" font-size="10" font-family="Inter, sans-serif">Real-time · WebSocket</text>
-            </svg>
+            <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="225" fill="#0d1b2a"/><line x1="105" y1="40" x2="105" y2="185" stroke="#0fd6a0" stroke-width="2" opacity="0.6"/><line x1="185" y1="40" x2="185" y2="185" stroke="#0fd6a0" stroke-width="2" opacity="0.6"/><line x1="40" y1="105" x2="230" y2="105" stroke="#0fd6a0" stroke-width="2" opacity="0.6"/><line x1="40" y1="145" x2="230" y2="145" stroke="#0fd6a0" stroke-width="2" opacity="0.6"/><line x1="55" y1="55" x2="88" y2="88" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/><line x1="88" y1="55" x2="55" y2="88" stroke="#ef4444" stroke-width="3" stroke-linecap="round"/><circle cx="145" cy="72" r="19" fill="none" stroke="#0fd6a0" stroke-width="3" opacity="0.9"/><circle cx="205" cy="122" r="19" fill="none" stroke="#0fd6a0" stroke-width="3" opacity="0.9"/><rect x="255" y="40" width="130" height="52" rx="6" fill="#0a2540" stroke="#0fd6a0" stroke-width="0.5"/><circle cx="275" cy="66" r="13" fill="#0fd6a0" opacity="0.25"/><rect x="295" y="58" width="75" height="8" rx="3" fill="#ffffff" opacity="0.15"/><rect x="295" y="70" width="50" height="6" rx="3" fill="#0fd6a0" opacity="0.4"/><rect x="255" y="105" width="130" height="30" rx="6" fill="#0a2540" stroke="#ffffff" stroke-width="0.3" opacity="0.5"/><text x="270" y="124" fill="#0fd6a0" font-size="12" font-family="JetBrains Mono, monospace">⚽ 2 : 1</text><text x="285" y="190" fill="#6b7280" font-size="10" text-anchor="middle" font-family="Inter, sans-serif">Real-time · WebSocket</text></svg>
           </div>
           <div class="project-card__content">
             <div class="project-card__header">
               <h3 class="project-card__title">Tiki-Taka-Toe</h3>
               <div class="project-card__links">
-                <a href="https://github.com/Mouhib223/Tiki-Taka-Toe" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Tiki-Taka-Toe on GitHub">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                </a>
+                <a href="https://github.com/Mouhib223/Tiki-Taka-Toe" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Tiki-Taka-Toe on GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
               </div>
             </div>
-            <p class="project-card__description">
-              Real-time football trivia Tic Tac Toe game with live multiplayer via WebSockets, football API integration,
-              and persistent game state. Built with NestJS, Angular, and PostgreSQL.
-            </p>
-            <div class="project-card__tags">
-              <span class="tag">NestJS</span>
-              <span class="tag">Angular</span>
-              <span class="tag">WebSockets</span>
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">TypeScript</span>
-            </div>
+            <p class="project-card__description">Real-time football trivia Tic Tac Toe with live multiplayer via WebSockets, football API integration, and persistent game state. The NestJS backend manages game sessions; Angular frontend handles real-time UI updates and player interactions.</p>
+            <div class="project-card__tags"><span class="tag">NestJS</span><span class="tag">Angular</span><span class="tag">WebSockets</span><span class="tag">PostgreSQL</span><span class="tag">TypeScript</span></div>
           </div>
         </article>
 
-        <!-- Vision Age B2B Platform -->
-        <article class="project-card" data-category="fullstack" role="article">
+        <!-- B2U-HUB (Vision Age) — corrected to Angular -->
+        <article class="project-card" data-category="fullstack">
           <div class="project-card__visual project-card__visual--vfx">
-            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" aria-label="Vision Age VFX B2B platform illustration" role="img">
-              <rect width="400" height="220" fill="#0d1b2a"/>
-              <defs>
-                <linearGradient id="vfxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#7c3aed"/>
-                  <stop offset="100%" stop-color="#10b981"/>
-                </linearGradient>
-              </defs>
-              <!-- Dashboard cards -->
-              <rect x="20" y="20" width="115" height="75" rx="6" fill="url(#vfxGrad)" opacity="0.15" stroke="#7c3aed" stroke-width="0.5"/>
-              <rect x="145" y="20" width="115" height="75" rx="6" fill="#0a2540" stroke="#10b981" stroke-width="0.5"/>
-              <rect x="270" y="20" width="110" height="75" rx="6" fill="#0a2540" stroke="#10b981" stroke-width="0.5"/>
-              <!-- Card contents -->
-              <text x="35" y="48" fill="#7c3aed" font-size="18" font-family="Inter, sans-serif" font-weight="700">128</text>
-              <text x="35" y="65" fill="#6b7280" font-size="9" font-family="Inter, sans-serif">Active Projects</text>
-              <rect x="35" y="72" width="80" height="4" rx="2" fill="url(#vfxGrad)" opacity="0.5"/>
-              <text x="160" y="48" fill="#10b981" font-size="18" font-family="Inter, sans-serif" font-weight="700">$42k</text>
-              <text x="160" y="65" fill="#6b7280" font-size="9" font-family="Inter, sans-serif">Monthly Revenue</text>
-              <text x="285" y="48" fill="#10b981" font-size="18" font-family="Inter, sans-serif" font-weight="700">98%</text>
-              <text x="285" y="65" fill="#6b7280" font-size="9" font-family="Inter, sans-serif">Client Satisfaction</text>
-              <!-- Table rows -->
-              <rect x="20" y="110" width="360" height="20" rx="3" fill="#0a2540"/>
-              <rect x="20" y="135" width="360" height="20" rx="3" fill="rgba(16,185,129,0.05)"/>
-              <rect x="20" y="160" width="360" height="20" rx="3" fill="#0a2540"/>
-              <rect x="30" y="117" width="80" height="6" rx="2" fill="#ffffff" opacity="0.15"/>
-              <rect x="30" y="142" width="80" height="6" rx="2" fill="#ffffff" opacity="0.15"/>
-              <rect x="30" y="167" width="80" height="6" rx="2" fill="#ffffff" opacity="0.15"/>
-            </svg>
+            <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="225" fill="#0d0818"/><defs><linearGradient id="vfxGrad2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7c3aed"/><stop offset="100%" stop-color="#0fd6a0"/></linearGradient></defs><rect x="20" y="20" width="115" height="75" rx="6" fill="url(#vfxGrad2)" opacity="0.15" stroke="#7c3aed" stroke-width="0.5"/><rect x="145" y="20" width="115" height="75" rx="6" fill="#0a2540" stroke="#0fd6a0" stroke-width="0.5"/><rect x="270" y="20" width="110" height="75" rx="6" fill="#0a2540" stroke="#0fd6a0" stroke-width="0.5"/><text x="35" y="50" fill="#7c3aed" font-size="18" font-family="Inter, sans-serif" font-weight="700">128</text><text x="35" y="68" fill="#6b7280" font-size="9" font-family="Inter, sans-serif">Active Projects</text><rect x="35" y="74" width="80" height="4" rx="2" fill="url(#vfxGrad2)" opacity="0.5"/><text x="160" y="50" fill="#0fd6a0" font-size="18" font-family="Inter, sans-serif" font-weight="700">$42k</text><text x="160" y="68" fill="#6b7280" font-size="9" font-family="Inter, sans-serif">Revenue MTD</text><text x="285" y="50" fill="#0fd6a0" font-size="18" font-family="Inter, sans-serif" font-weight="700">98%</text><text x="285" y="68" fill="#6b7280" font-size="9" font-family="Inter, sans-serif">Satisfaction</text><rect x="20" y="108" width="360" height="20" rx="3" fill="#0a2540"/><rect x="20" y="133" width="360" height="20" rx="3" fill="rgba(15,214,160,0.05)"/><rect x="20" y="158" width="360" height="20" rx="3" fill="#0a2540"/><rect x="30" y="116" width="80" height="6" rx="2" fill="#ffffff" opacity="0.12"/><rect x="30" y="141" width="80" height="6" rx="2" fill="#ffffff" opacity="0.12"/><rect x="30" y="166" width="80" height="6" rx="2" fill="#ffffff" opacity="0.12"/></svg>
           </div>
           <div class="project-card__content">
             <div class="project-card__header">
-              <h3 class="project-card__title">Vision Age VFX — B2B Platform</h3>
+              <h3 class="project-card__title">B2U-HUB — Vision Age VFX Platform</h3>
               <div class="project-card__links">
-                <a href="https://github.com/Mouhib223/B2U-HUB" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View B2U-HUB on GitHub">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                </a>
+                <a href="https://github.com/Mouhib223/B2U-HUB" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="B2U-HUB on GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
               </div>
             </div>
-            <p class="project-card__description">
-              Led development of a B2B SaaS platform for VFX studio service management. Full-stack solution
-              with client/vendor portals, project tracking dashboards, and automated invoicing — built with
-              React, NestJS, and PostgreSQL.
-            </p>
-            <div class="project-card__tags">
-              <span class="tag">React</span>
-              <span class="tag">NestJS</span>
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">Team Lead</span>
-            </div>
+            <p class="project-card__description">Led development of a B2B SaaS platform for VFX studio service management as Team Lead. The Angular frontend (Angular CLI v20) provides client/vendor dashboards. The NestJS backend handles project tracking, automated invoicing, and service workflows — all persisted in PostgreSQL.</p>
+            <div class="project-card__tags"><span class="tag">Angular</span><span class="tag">NestJS</span><span class="tag">PostgreSQL</span><span class="tag">TypeScript</span><span class="tag">Team Lead</span></div>
           </div>
         </article>
 
-        <!-- RetroGames Website -->
-        <article class="project-card" data-category="fullstack" role="article">
+        <!-- RetroGames -->
+        <article class="project-card" data-category="fullstack">
           <div class="project-card__visual project-card__visual--game">
-            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" aria-label="Retro Games Website illustration" role="img">
-              <rect width="400" height="220" fill="#0d1b2a"/>
-              <!-- Pixel grid bg -->
-              <rect x="20" y="20" width="360" height="180" rx="6" fill="#0a1826"/>
-              <!-- Game cards -->
-              <rect x="35" y="35" width="80" height="70" rx="4" fill="#1a0a3a" stroke="#7c3aed" stroke-width="1"/>
-              <rect x="125" y="35" width="80" height="70" rx="4" fill="#0a2a1a" stroke="#10b981" stroke-width="1"/>
-              <rect x="215" y="35" width="80" height="70" rx="4" fill="#2a1a0a" stroke="#f59e0b" stroke-width="1"/>
-              <rect x="305" y="35" width="65" height="70" rx="4" fill="#1a1a0a" stroke="#ef4444" stroke-width="1"/>
-              <!-- Pac-man pixel art -->
-              <circle cx="75" cy="62" r="18" fill="#f59e0b"/>
-              <polygon points="75,62 93,52 93,72" fill="#0a1826"/>
-              <!-- Space invader -->
-              <rect x="150" y="55" width="8" height="6" rx="1" fill="#10b981"/>
-              <rect x="143" y="61" width="24" height="10" rx="1" fill="#10b981"/>
-              <rect x="139" y="55" width="7" height="10" rx="1" fill="#10b981"/>
-              <rect x="168" y="55" width="7" height="10" rx="1" fill="#10b981"/>
-              <!-- Tetris blocks -->
-              <rect x="230" y="58" width="12" height="12" fill="#ef4444"/>
-              <rect x="242" y="58" width="12" height="12" fill="#ef4444"/>
-              <rect x="242" y="70" width="12" height="12" fill="#ef4444"/>
-              <rect x="254" y="70" width="12" height="12" fill="#ef4444"/>
-              <!-- Bottom text -->
-              <rect x="35" y="120" width="100" height="6" rx="2" fill="#ffffff" opacity="0.1"/>
-              <rect x="35" y="132" width="60" height="5" rx="2" fill="#10b981" opacity="0.4"/>
-              <rect x="125" y="120" width="100" height="6" rx="2" fill="#ffffff" opacity="0.1"/>
-              <rect x="125" y="132" width="60" height="5" rx="2" fill="#10b981" opacity="0.4"/>
-              <text x="100" y="185" fill="#6b7280" font-size="10" text-anchor="middle" font-family="Inter, sans-serif">Classic Games Portal · Blog · Merch</text>
-            </svg>
+            <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="225" fill="#0d1b2a"/><rect x="20" y="20" width="360" height="185" rx="6" fill="#0a1826"/><rect x="35" y="35" width="82" height="72" rx="4" fill="#1a0a3a" stroke="#7c3aed" stroke-width="1"/><rect x="127" y="35" width="82" height="72" rx="4" fill="#0a2a1a" stroke="#0fd6a0" stroke-width="1"/><rect x="219" y="35" width="82" height="72" rx="4" fill="#2a1a0a" stroke="#f59e0b" stroke-width="1"/><rect x="311" y="35" width="60" height="72" rx="4" fill="#1a1a0a" stroke="#ef4444" stroke-width="1"/><circle cx="76" cy="64" r="19" fill="#f59e0b"/><polygon points="76,64 95,54 95,74" fill="#0a1826"/><rect x="152" y="56" width="8" height="6" rx="1" fill="#0fd6a0"/><rect x="145" y="62" width="24" height="10" rx="1" fill="#0fd6a0"/><rect x="141" y="56" width="7" height="10" rx="1" fill="#0fd6a0"/><rect x="170" y="56" width="7" height="10" rx="1" fill="#0fd6a0"/><rect x="234" y="58" width="12" height="12" fill="#ef4444"/><rect x="246" y="58" width="12" height="12" fill="#ef4444"/><rect x="246" y="70" width="12" height="12" fill="#ef4444"/><rect x="258" y="70" width="12" height="12" fill="#ef4444"/><rect x="35" y="122" width="100" height="6" rx="2" fill="#ffffff" opacity="0.08"/><rect x="35" y="134" width="60" height="5" rx="2" fill="#0fd6a0" opacity="0.4"/><rect x="127" y="122" width="100" height="6" rx="2" fill="#ffffff" opacity="0.08"/><text x="200" y="190" fill="#6b7280" font-size="10" text-anchor="middle" font-family="Inter, sans-serif">Classic Games · Blog · Merch · MIT License</text></svg>
           </div>
           <div class="project-card__content">
             <div class="project-card__header">
               <h3 class="project-card__title">RetroGames Online Website</h3>
               <div class="project-card__links">
-                <a href="https://github.com/Mouhib223/RetroGames---Games-Website" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View RetroGames on GitHub">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                </a>
+                <a href="https://github.com/Mouhib223/RetroGames---Games-Website" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="RetroGames on GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
               </div>
             </div>
-            <p class="project-card__description">
-              A nostalgic gaming portal featuring classic browser games, a curated game blog, and a merch section.
-              Built with a focus on retro aesthetics, responsive layout, and engaging UX.
-            </p>
-            <div class="project-card__tags">
-              <span class="tag">HTML5</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">MIT License</span>
-            </div>
+            <p class="project-card__description">A vibrant nostalgia gaming portal with classic browser games, a curated game blog, and a merch section. Built with modern web design blended with retro aesthetics. MIT licensed and open source.</p>
+            <div class="project-card__tags"><span class="tag">HTML5</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">MIT License</span></div>
           </div>
         </article>
 
-        <!-- Spring Boot Project (Sports) -->
-        <article class="project-card" data-category="fullstack" role="article">
+        <!-- Spring Boot / Sports App -->
+        <article class="project-card" data-category="fullstack">
           <div class="project-card__visual project-card__visual--java">
-            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" aria-label="Sports Activities Management App illustration" role="img">
-              <rect width="400" height="220" fill="#0d1b2a"/>
-              <rect x="20" y="20" width="360" height="180" rx="8" fill="#0a1826"/>
-              <!-- JavaFX window mockup -->
-              <rect x="30" y="30" width="340" height="20" rx="3" fill="#1a3040"/>
-              <circle cx="46" cy="40" r="5" fill="#ef4444" opacity="0.7"/>
-              <circle cx="60" cy="40" r="5" fill="#f59e0b" opacity="0.7"/>
-              <circle cx="74" cy="40" r="5" fill="#10b981" opacity="0.7"/>
-              <text x="160" y="44" fill="#6b7280" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Sports Activities Manager</text>
-              <!-- Left sidebar -->
-              <rect x="30" y="55" width="80" height="140" rx="3" fill="#091520"/>
-              <rect x="38" y="68" width="60" height="8" rx="2" fill="#10b981" opacity="0.5"/>
-              <rect x="38" y="82" width="60" height="8" rx="2" fill="#ffffff" opacity="0.08"/>
-              <rect x="38" y="96" width="60" height="8" rx="2" fill="#ffffff" opacity="0.08"/>
-              <rect x="38" y="110" width="60" height="8" rx="2" fill="#ffffff" opacity="0.08"/>
-              <!-- Main area - activity cards -->
-              <rect x="120" y="60" width="115" height="55" rx="4" fill="#0a2540" stroke="#10b981" stroke-width="0.5"/>
-              <rect x="245" y="60" width="120" height="55" rx="4" fill="#0a2540" stroke="#10b981" stroke-width="0.5"/>
-              <text x="130" y="78" fill="#10b981" font-size="10" font-family="Inter, sans-serif">⚽ Football</text>
-              <rect x="130" y="85" width="70" height="5" rx="2" fill="#ffffff" opacity="0.1"/>
-              <rect x="130" y="95" width="50" height="5" rx="2" fill="#10b981" opacity="0.3"/>
-              <text x="255" y="78" fill="#10b981" font-size="10" font-family="Inter, sans-serif">🏀 Basketball</text>
-              <rect x="255" y="85" width="70" height="5" rx="2" fill="#ffffff" opacity="0.1"/>
-              <rect x="255" y="95" width="50" height="5" rx="2" fill="#10b981" opacity="0.3"/>
-              <text x="200" y="175" fill="#6b7280" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">JavaFX · Hibernate · MySQL</text>
-            </svg>
+            <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="225" fill="#0a1212"/><rect x="20" y="20" width="360" height="185" rx="8" fill="#0a1826"/><rect x="30" y="30" width="340" height="20" rx="3" fill="#1a3040"/><circle cx="46" cy="40" r="5" fill="#ef4444" opacity="0.7"/><circle cx="60" cy="40" r="5" fill="#f59e0b" opacity="0.7"/><circle cx="74" cy="40" r="5" fill="#0fd6a0" opacity="0.7"/><text x="155" y="44" fill="#6b7280" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Sports Activities Manager</text><rect x="30" y="55" width="80" height="145" rx="3" fill="#091520"/><rect x="38" y="68" width="60" height="8" rx="2" fill="#0fd6a0" opacity="0.5"/><rect x="38" y="82" width="60" height="8" rx="2" fill="#ffffff" opacity="0.07"/><rect x="38" y="96" width="60" height="8" rx="2" fill="#ffffff" opacity="0.07"/><rect x="38" y="110" width="60" height="8" rx="2" fill="#ffffff" opacity="0.07"/><rect x="118" y="60" width="115" height="55" rx="4" fill="#0a2540" stroke="#0fd6a0" stroke-width="0.5"/><rect x="245" y="60" width="120" height="55" rx="4" fill="#0a2540" stroke="#0fd6a0" stroke-width="0.5"/><text x="128" y="78" fill="#0fd6a0" font-size="10" font-family="Inter, sans-serif">⚽ Football</text><rect x="128" y="85" width="70" height="5" rx="2" fill="#ffffff" opacity="0.08"/><rect x="128" y="95" width="50" height="5" rx="2" fill="#0fd6a0" opacity="0.3"/><text x="255" y="78" fill="#0fd6a0" font-size="10" font-family="Inter, sans-serif">🏀 Basketball</text><rect x="255" y="85" width="70" height="5" rx="2" fill="#ffffff" opacity="0.08"/><rect x="255" y="95" width="50" height="5" rx="2" fill="#0fd6a0" opacity="0.3"/><text x="200" y="178" fill="#6b7280" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">Spring Boot · Hibernate · MySQL</text></svg>
           </div>
           <div class="project-card__content">
             <div class="project-card__header">
               <h3 class="project-card__title">Sports Activities Management App</h3>
               <div class="project-card__links">
-                <a href="https://github.com/Mouhib223/Spring-Boot-Project-esprit" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Spring Boot Project on GitHub">
-                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                </a>
+                <a href="https://github.com/Mouhib223/Spring-Boot-Project-esprit" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Spring Boot Project on GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
               </div>
             </div>
-            <p class="project-card__description">
-              Desktop application for managing sports clubs, activities, events, and participants.
-              Features a full CRUD interface with JavaFX, ORM persistence via Hibernate, and a MySQL backend.
-            </p>
-            <div class="project-card__tags">
-              <span class="tag">Java</span>
-              <span class="tag">JavaFX</span>
-              <span class="tag">Hibernate</span>
-              <span class="tag">MySQL</span>
-              <span class="tag">Spring Boot</span>
-            </div>
+            <p class="project-card__description">ESPRIT university project for managing sports clubs, activities, events, and participants. Full Spring Boot backend with Maven build, Hibernate ORM for MySQL persistence, and a desktop UI layer.</p>
+            <div class="project-card__tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Hibernate</span><span class="tag">MySQL</span><span class="tag">Maven</span></div>
           </div>
         </article>
 
         <!-- Smart Irrigation -->
-        <article class="project-card" data-category="embedded" role="article">
+        <article class="project-card" data-category="embedded">
           <div class="project-card__visual project-card__visual--embedded">
-            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" aria-label="Smart Irrigation System illustration" role="img">
-              <rect width="400" height="220" fill="#0d1b2a"/>
-              <rect x="20" y="20" width="360" height="180" rx="8" fill="#0a1520"/>
-              <!-- PCB-style background -->
-              <line x1="20" y1="60" x2="380" y2="60" stroke="#10b981" stroke-width="0.3" stroke-dasharray="4,8" opacity="0.2"/>
-              <line x1="20" y1="100" x2="380" y2="100" stroke="#10b981" stroke-width="0.3" stroke-dasharray="4,8" opacity="0.2"/>
-              <line x1="20" y1="140" x2="380" y2="140" stroke="#10b981" stroke-width="0.3" stroke-dasharray="4,8" opacity="0.2"/>
-              <line x1="80" y1="20" x2="80" y2="200" stroke="#10b981" stroke-width="0.3" stroke-dasharray="4,8" opacity="0.2"/>
-              <line x1="160" y1="20" x2="160" y2="200" stroke="#10b981" stroke-width="0.3" stroke-dasharray="4,8" opacity="0.2"/>
-              <line x1="240" y1="20" x2="240" y2="200" stroke="#10b981" stroke-width="0.3" stroke-dasharray="4,8" opacity="0.2"/>
-              <line x1="320" y1="20" x2="320" y2="200" stroke="#10b981" stroke-width="0.3" stroke-dasharray="4,8" opacity="0.2"/>
-              <!-- STM32 chip -->
-              <rect x="130" y="70" width="100" height="70" rx="4" fill="#1a3040" stroke="#10b981" stroke-width="1.5"/>
-              <rect x="140" y="80" width="80" height="50" rx="2" fill="#0d2030"/>
-              <text x="180" y="107" fill="#10b981" font-size="8" text-anchor="middle" font-family="JetBrains Mono, monospace">STM32F4</text>
-              <text x="180" y="118" fill="#6b7280" font-size="7" text-anchor="middle" font-family="JetBrains Mono, monospace">FreeRTOS</text>
-              <!-- Pins on sides -->
-              <rect x="120" y="78" width="10" height="4" rx="1" fill="#10b981" opacity="0.7"/>
-              <rect x="120" y="86" width="10" height="4" rx="1" fill="#10b981" opacity="0.7"/>
-              <rect x="120" y="94" width="10" height="4" rx="1" fill="#10b981" opacity="0.7"/>
-              <rect x="230" y="78" width="10" height="4" rx="1" fill="#10b981" opacity="0.7"/>
-              <rect x="230" y="86" width="10" height="4" rx="1" fill="#10b981" opacity="0.7"/>
-              <rect x="230" y="94" width="10" height="4" rx="1" fill="#10b981" opacity="0.7"/>
-              <!-- Sensor -->
-              <rect x="40" y="80" width="60" height="40" rx="4" fill="#0a2540" stroke="#3b82f6" stroke-width="1"/>
-              <text x="70" y="103" fill="#3b82f6" font-size="8" text-anchor="middle" font-family="JetBrains Mono, monospace">SOIL</text>
-              <text x="70" y="112" fill="#3b82f6" font-size="7" text-anchor="middle" font-family="JetBrains Mono, monospace">SENSOR</text>
-              <!-- Pump -->
-              <rect x="280" y="80" width="60" height="40" rx="4" fill="#0a2540" stroke="#f59e0b" stroke-width="1"/>
-              <text x="310" y="103" fill="#f59e0b" font-size="8" text-anchor="middle" font-family="JetBrains Mono, monospace">PUMP</text>
-              <!-- Connections -->
-              <line x1="100" y1="100" x2="130" y2="100" stroke="#3b82f6" stroke-width="1.5" opacity="0.7"/>
-              <line x1="240" y1="100" x2="280" y2="100" stroke="#f59e0b" stroke-width="1.5" opacity="0.7"/>
-              <text x="200" y="175" fill="#6b7280" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">STM32 · Embedded C · FreeRTOS · MQTT</text>
-            </svg>
+            <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="225" fill="#07120e"/><rect x="20" y="20" width="360" height="185" rx="8" fill="#0a1520"/><line x1="20" y1="60" x2="380" y2="60" stroke="#0fd6a0" stroke-width="0.3" stroke-dasharray="4,8" opacity="0.2"/><line x1="20" y1="100" x2="380" y2="100" stroke="#0fd6a0" stroke-width="0.3" stroke-dasharray="4,8" opacity="0.2"/><line x1="20" y1="140" x2="380" y2="140" stroke="#0fd6a0" stroke-width="0.3" stroke-dasharray="4,8" opacity="0.2"/><line x1="80" y1="20" x2="80" y2="200" stroke="#0fd6a0" stroke-width="0.3" stroke-dasharray="4,8" opacity="0.2"/><line x1="160" y1="20" x2="160" y2="200" stroke="#0fd6a0" stroke-width="0.3" stroke-dasharray="4,8" opacity="0.2"/><line x1="240" y1="20" x2="240" y2="200" stroke="#0fd6a0" stroke-width="0.3" stroke-dasharray="4,8" opacity="0.2"/><line x1="320" y1="20" x2="320" y2="200" stroke="#0fd6a0" stroke-width="0.3" stroke-dasharray="4,8" opacity="0.2"/><rect x="130" y="72" width="100" height="70" rx="4" fill="#1a3040" stroke="#0fd6a0" stroke-width="1.5"/><rect x="140" y="82" width="80" height="50" rx="2" fill="#0d2030"/><text x="180" y="109" fill="#0fd6a0" font-size="8" text-anchor="middle" font-family="JetBrains Mono, monospace">STM32F4</text><text x="180" y="120" fill="#6b7280" font-size="7" text-anchor="middle" font-family="JetBrains Mono, monospace">FreeRTOS</text><rect x="120" y="80" width="10" height="4" rx="1" fill="#0fd6a0" opacity="0.7"/><rect x="120" y="88" width="10" height="4" rx="1" fill="#0fd6a0" opacity="0.7"/><rect x="120" y="96" width="10" height="4" rx="1" fill="#0fd6a0" opacity="0.7"/><rect x="230" y="80" width="10" height="4" rx="1" fill="#0fd6a0" opacity="0.7"/><rect x="230" y="88" width="10" height="4" rx="1" fill="#0fd6a0" opacity="0.7"/><rect x="230" y="96" width="10" height="4" rx="1" fill="#0fd6a0" opacity="0.7"/><rect x="40" y="82" width="60" height="40" rx="4" fill="#0a2540" stroke="#3b82f6" stroke-width="1"/><text x="70" y="104" fill="#3b82f6" font-size="8" text-anchor="middle" font-family="JetBrains Mono, monospace">SOIL</text><rect x="280" y="82" width="60" height="40" rx="4" fill="#0a2540" stroke="#f59e0b" stroke-width="1"/><text x="310" y="104" fill="#f59e0b" font-size="8" text-anchor="middle" font-family="JetBrains Mono, monospace">PUMP</text><line x1="100" y1="102" x2="130" y2="102" stroke="#3b82f6" stroke-width="1.5" opacity="0.7"/><line x1="240" y1="102" x2="280" y2="102" stroke="#f59e0b" stroke-width="1.5" opacity="0.7"/><text x="200" y="178" fill="#6b7280" font-size="9" text-anchor="middle" font-family="Inter, sans-serif">STM32 · Embedded C · FreeRTOS · MQTT</text></svg>
           </div>
           <div class="project-card__content">
-            <div class="project-card__header">
-              <h3 class="project-card__title">Smart Irrigation System</h3>
-            </div>
-            <p class="project-card__description">
-              IoT-based smart irrigation controller using STM32 microcontroller with FreeRTOS task scheduling.
-              Reads soil moisture sensors, controls pump actuators automatically, and publishes telemetry
-              data via MQTT for remote monitoring.
-            </p>
-            <div class="project-card__tags">
-              <span class="tag">STM32</span>
-              <span class="tag">Embedded C</span>
-              <span class="tag">FreeRTOS</span>
-              <span class="tag">MQTT</span>
-              <span class="tag">IoT</span>
-            </div>
+            <div class="project-card__header"><h3 class="project-card__title">Smart Irrigation System</h3></div>
+            <p class="project-card__description">IoT-based smart irrigation controller using STM32 microcontroller with FreeRTOS task scheduling. Reads soil moisture sensors, controls pump actuators automatically, and publishes telemetry data via MQTT for remote monitoring.</p>
+            <div class="project-card__tags"><span class="tag">STM32</span><span class="tag">Embedded C</span><span class="tag">FreeRTOS</span><span class="tag">MQTT</span><span class="tag">IoT</span></div>
           </div>
         </article>
 
         <!-- Hotel Booking Android -->
-        <article class="project-card" data-category="mobile" role="article">
+        <article class="project-card" data-category="mobile">
           <div class="project-card__visual project-card__visual--mobile">
-            <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" aria-label="Hotel Booking Android App illustration" role="img">
-              <rect width="400" height="220" fill="#0d1b2a"/>
-              <!-- Phone frame -->
-              <rect x="150" y="15" width="100" height="190" rx="14" fill="#1a3040" stroke="#10b981" stroke-width="1.5"/>
-              <rect x="155" y="25" width="90" height="170" rx="8" fill="#0a1826"/>
-              <circle cx="200" cy="196" r="5" fill="#2a4060"/>
-              <!-- App screens -->
-              <rect x="158" y="30" width="84" height="20" rx="3" fill="#0d2a3a"/>
-              <text x="200" y="43" fill="#10b981" font-size="7" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600">HOTEL FINDER</text>
-              <!-- Hotel card -->
-              <rect x="160" y="55" width="80" height="45" rx="4" fill="#0a2540"/>
-              <rect x="160" y="55" width="80" height="22" rx="4" fill="#1a3a50"/>
-              <text x="200" y="69" fill="#10b981" font-size="7" text-anchor="middle" font-family="Inter, sans-serif">🏨 Grand Hotel</text>
-              <text x="200" y="81" fill="#6b7280" font-size="6" text-anchor="middle" font-family="Inter, sans-serif">Tunis — ★★★★★</text>
-              <rect x="165" y="87" width="50" height="8" rx="2" fill="#10b981" opacity="0.8"/>
-              <text x="190" y="94" fill="#0a1826" font-size="6" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600">Book Now</text>
-              <!-- Second card -->
-              <rect x="160" y="108" width="80" height="35" rx="4" fill="#0a2540"/>
-              <text x="200" y="122" fill="#ffffff" font-size="6" text-anchor="middle" font-family="Inter, sans-serif">🏨 Seaside Resort</text>
-              <text x="200" y="133" fill="#6b7280" font-size="6" text-anchor="middle" font-family="Inter, sans-serif">Hammamet — ★★★★</text>
-              <!-- Bottom nav -->
-              <rect x="158" y="148" width="84" height="20" rx="0" fill="#0d2030"/>
-              <text x="175" y="161" fill="#6b7280" font-size="12">🏠</text>
-              <text x="195" y="161" fill="#10b981" font-size="12">🔍</text>
-              <text x="215" y="161" fill="#6b7280" font-size="12">♡</text>
-              <!-- Left side info -->
-              <text x="40" y="80" fill="#6b7280" font-size="9" font-family="Inter, sans-serif">Android</text>
-              <text x="40" y="94" fill="#6b7280" font-size="9" font-family="Inter, sans-serif">Studio</text>
-              <text x="40" y="120" fill="#f59e0b" font-size="9" font-family="Inter, sans-serif">Java</text>
-              <text x="40" y="134" fill="#f59e0b" font-size="9" font-family="Inter, sans-serif">REST API</text>
-            </svg>
+            <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="225" fill="#07140e"/><rect x="150" y="12" width="100" height="200" rx="14" fill="#1a3040" stroke="#0fd6a0" stroke-width="1.5"/><rect x="155" y="22" width="90" height="175" rx="8" fill="#0a1826"/><circle cx="200" cy="204" r="5" fill="#2a4060"/><rect x="158" y="28" width="84" height="22" rx="3" fill="#0d2a3a"/><text x="200" y="43" fill="#0fd6a0" font-size="7.5" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600">HOTEL FINDER</text><rect x="160" y="55" width="80" height="46" rx="4" fill="#0a2540"/><rect x="160" y="55" width="80" height="22" rx="4" fill="#1a3a50"/><text x="200" y="70" fill="#0fd6a0" font-size="7" text-anchor="middle" font-family="Inter, sans-serif">🏨 Grand Hotel</text><text x="200" y="82" fill="#6b7280" font-size="6" text-anchor="middle" font-family="Inter, sans-serif">Tunis — ★★★★★</text><rect x="165" y="88" width="50" height="8" rx="2" fill="#0fd6a0" opacity="0.8"/><text x="190" y="95" fill="#0a1826" font-size="6" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600">Book Now</text><rect x="160" y="108" width="80" height="36" rx="4" fill="#0a2540"/><text x="200" y="123" fill="#ffffff" font-size="6" text-anchor="middle" font-family="Inter, sans-serif">🏨 Seaside Resort</text><text x="200" y="134" fill="#6b7280" font-size="6" text-anchor="middle" font-family="Inter, sans-serif">Hammamet — ★★★★</text><rect x="158" y="150" width="84" height="20" rx="0" fill="#0d2030"/><text x="175" y="163" fill="#6b7280" font-size="12">🏠</text><text x="195" y="163" fill="#0fd6a0" font-size="12">🔍</text><text x="215" y="163" fill="#6b7280" font-size="12">♡</text><text x="45" y="80" fill="#6b7280" font-size="9" font-family="Inter, sans-serif">Android</text><text x="45" y="95" fill="#6b7280" font-size="9" font-family="Inter, sans-serif">Studio</text><text x="45" y="120" fill="#f59e0b" font-size="9" font-family="Inter, sans-serif">Java</text><text x="45" y="135" fill="#f59e0b" font-size="9" font-family="Inter, sans-serif">REST API</text></svg>
           </div>
           <div class="project-card__content">
-            <div class="project-card__header">
-              <h3 class="project-card__title">Hotel Booking Android App</h3>
-            </div>
-            <p class="project-card__description">
-              Native Android hotel booking application built with Java and Android Studio. Features hotel search,
-              availability checking, room booking, and user account management with REST API integration.
-            </p>
-            <div class="project-card__tags">
-              <span class="tag">Java</span>
-              <span class="tag">Android Studio</span>
-              <span class="tag">REST API</span>
-              <span class="tag">XML Layouts</span>
-            </div>
+            <div class="project-card__header"><h3 class="project-card__title">Hotel Booking Android App</h3></div>
+            <p class="project-card__description">Native Android hotel booking application built with Java and Android Studio. Features hotel search, availability checking, room booking, and user account management with REST API integration.</p>
+            <div class="project-card__tags"><span class="tag">Java</span><span class="tag">Android Studio</span><span class="tag">REST API</span><span class="tag">XML Layouts</span></div>
           </div>
         </article>
 
       </div>
     </div>
   </section>
-
-  <!-- ===== EDUCATION SECTION ===== -->
-  <section class="section education" id="education" aria-labelledby="educationHeading">
+  <!-- ===== EDUCATION ===== -->
+  <section class="section section--alt education" id="education" aria-labelledby="educationHeading">
     <div class="section__container">
       <div class="section__header">
         <span class="section__label">Academic background</span>
         <h2 class="section__title" id="educationHeading">Education</h2>
         <div class="section__divider" aria-hidden="true"></div>
       </div>
-
-      <div class="education__grid">
+      <div class="education__grid" id="educationList">
 
         <article class="edu-card edu-card--featured">
-          <div class="edu-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          </div>
+          <div class="edu-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
           <div class="edu-card__content">
             <div class="edu-card__header">
               <div>
@@ -1034,23 +537,13 @@
               </div>
               <span class="edu-card__date">Sep 2024 – Present</span>
             </div>
-            <p class="edu-card__description">
-              Advanced engineering curriculum covering software architecture, distributed systems, cloud computing,
-              data engineering, and modern full-stack development practices. Night programme alongside professional work.
-            </p>
-            <div class="edu-card__tags">
-              <span class="tag">Software Architecture</span>
-              <span class="tag">Data Engineering</span>
-              <span class="tag">Cloud Computing</span>
-              <span class="tag">Distributed Systems</span>
-            </div>
+            <p class="edu-card__description">Advanced engineering curriculum covering software architecture, distributed systems, cloud computing, data engineering, and modern full-stack development practices. Night programme alongside professional work.</p>
+            <div class="edu-card__tags"><span class="tag">Software Architecture</span><span class="tag">Data Engineering</span><span class="tag">Cloud Computing</span><span class="tag">Distributed Systems</span></div>
           </div>
         </article>
 
         <article class="edu-card">
-          <div class="edu-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-          </div>
+          <div class="edu-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
           <div class="edu-card__content">
             <div class="edu-card__header">
               <div>
@@ -1059,24 +552,13 @@
               </div>
               <span class="edu-card__date">2021 – 2024</span>
             </div>
-            <p class="edu-card__description">
-              Three-year programme focusing on embedded systems design, IoT protocols, real-time operating systems,
-              microcontroller programming (STM32, Arduino), and full-stack web development fundamentals.
-            </p>
-            <div class="edu-card__tags">
-              <span class="tag">Embedded Systems</span>
-              <span class="tag">IoT</span>
-              <span class="tag">STM32</span>
-              <span class="tag">RTOS</span>
-              <span class="tag">Computer Networks</span>
-            </div>
+            <p class="edu-card__description">Three-year programme focusing on embedded systems design, IoT protocols, real-time operating systems, microcontroller programming (STM32, Arduino), and full-stack web development fundamentals.</p>
+            <div class="edu-card__tags"><span class="tag">Embedded Systems</span><span class="tag">IoT</span><span class="tag">STM32</span><span class="tag">RTOS</span><span class="tag">Computer Networks</span></div>
           </div>
         </article>
 
         <article class="edu-card">
-          <div class="edu-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
+          <div class="edu-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
           <div class="edu-card__content">
             <div class="edu-card__header">
               <div>
@@ -1085,15 +567,8 @@
               </div>
               <span class="edu-card__date">2018 – 2021</span>
             </div>
-            <p class="edu-card__description">
-              Baccalaureate in Sciences, graduated with honors. Strong foundation in mathematics, physics, and
-              computer science that built analytical and problem-solving skills applied throughout engineering studies.
-            </p>
-            <div class="edu-card__tags">
-              <span class="tag">Mathematics</span>
-              <span class="tag">Physics</span>
-              <span class="tag">With Honors</span>
-            </div>
+            <p class="edu-card__description">Baccalaureate in Sciences, graduated with honors. Strong foundation in mathematics, physics, and computer science that built the analytical and problem-solving skills applied throughout engineering studies.</p>
+            <div class="edu-card__tags"><span class="tag">Mathematics</span><span class="tag">Physics</span><span class="tag">With Honors</span></div>
           </div>
         </article>
 
@@ -1101,7 +576,7 @@
     </div>
   </section>
 
-  <!-- ===== CREDENTIALS SECTION ===== -->
+  <!-- ===== CREDENTIALS ===== -->
   <section class="section credentials" id="credentials" aria-labelledby="credentialsHeading">
     <div class="section__container">
       <div class="section__header">
@@ -1109,80 +584,45 @@
         <h2 class="section__title" id="credentialsHeading">Credentials &amp; Certifications</h2>
         <div class="section__divider" aria-hidden="true"></div>
       </div>
-
-      <div class="credentials__grid">
+      <div class="credentials__grid" id="credentialsList">
 
         <article class="cert-card">
-          <div class="cert-card__icon cert-card__icon--coursera" aria-hidden="true">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Coursera">
-              <circle cx="20" cy="20" r="20" fill="#0056D2"/>
-              <text x="20" y="26" fill="white" font-size="14" font-weight="700" text-anchor="middle" font-family="Inter, sans-serif">C</text>
-            </svg>
-          </div>
+          <div class="cert-card__icon" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#0056D2"/><text x="20" y="26" fill="white" font-size="14" font-weight="700" text-anchor="middle" font-family="Inter, sans-serif">C</text></svg></div>
           <div class="cert-card__content">
-            <h3 class="cert-card__title">Coursera Certifications</h3>
+            <h3 class="cert-card__title">Coursera Coursework</h3>
             <p class="cert-card__issuer">Coursera</p>
-            <p class="cert-card__description">
-              Multiple professional development courses completed on Coursera covering software development,
-              algorithms, and engineering best practices.
-            </p>
-            <a href="https://www.coursera.org/my-learning" target="_blank" rel="noopener noreferrer" class="cert-card__link">
-              View Learning Profile
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </a>
-            <p class="cert-card__note">Note: Coursera learning dashboard requires authentication to verify.</p>
+            <p class="cert-card__description">Professional development courses completed on Coursera covering software development, algorithms, and engineering best practices.</p>
+            <a href="https://www.coursera.org/my-learning" target="_blank" rel="noopener noreferrer" class="cert-card__link">View learning profile<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            <p class="cert-card__note">Note: Coursera's my-learning dashboard requires authentication to verify individual certificates.</p>
           </div>
         </article>
 
         <article class="cert-card">
-          <div class="cert-card__icon cert-card__icon--linedata" aria-hidden="true">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Linedata">
-              <rect width="40" height="40" rx="8" fill="#003366"/>
-              <text x="20" y="26" fill="white" font-size="10" font-weight="700" text-anchor="middle" font-family="Inter, sans-serif">LD</text>
-            </svg>
-          </div>
+          <div class="cert-card__icon" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#003366"/><text x="20" y="26" fill="white" font-size="10" font-weight="700" text-anchor="middle" font-family="Inter, sans-serif">LD</text></svg></div>
           <div class="cert-card__content">
-            <h3 class="cert-card__title">Software Development Internship Certificate</h3>
+            <h3 class="cert-card__title">Software Developer Internship</h3>
             <p class="cert-card__issuer">Linedata</p>
-            <p class="cert-card__description">
-              Completion certificate for the 6-month Software Developer Internship on the Broker Simulator
-              Execution project — .NET, Angular, FIX Protocol, SQL Server.
-            </p>
+            <p class="cert-card__description">Completion certificate for the 6-month internship on the Broker Simulator Execution project — .NET, Angular, FIX Protocol, SQL Server.</p>
             <span class="cert-card__date">Feb 2024 – Aug 2024</span>
           </div>
         </article>
 
         <article class="cert-card">
-          <div class="cert-card__icon cert-card__icon--linedata" aria-hidden="true">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Linedata QA">
-              <rect width="40" height="40" rx="8" fill="#003366"/>
-              <text x="20" y="26" fill="white" font-size="10" font-weight="700" text-anchor="middle" font-family="Inter, sans-serif">QA</text>
-            </svg>
-          </div>
+          <div class="cert-card__icon" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#003366"/><text x="20" y="26" fill="white" font-size="10" font-weight="700" text-anchor="middle" font-family="Inter, sans-serif">QA</text></svg></div>
           <div class="cert-card__content">
-            <h3 class="cert-card__title">QA Analyst Internship Certificate</h3>
+            <h3 class="cert-card__title">QA Analyst Internship</h3>
             <p class="cert-card__issuer">Linedata</p>
-            <p class="cert-card__description">
-              Certificate for QA Analyst internship covering test automation with Selenium, test case management
-              in Zephyr, and defect lifecycle management in Jira.
-            </p>
+            <p class="cert-card__description">Certificate for QA Analyst internship covering test automation with Selenium, test case management in Zephyr Scale, and defect lifecycle management in Jira.</p>
             <span class="cert-card__date">Sep 2024 – Dec 2024</span>
           </div>
         </article>
 
         <article class="cert-card">
-          <div class="cert-card__icon cert-card__icon--esprit" aria-hidden="true">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="ESPRIT">
-              <rect width="40" height="40" rx="8" fill="#10b981"/>
-              <text x="20" y="26" fill="white" font-size="9" font-weight="700" text-anchor="middle" font-family="Inter, sans-serif">ESP</text>
-            </svg>
-          </div>
+          <div class="cert-card__icon" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="#0fd6a0"/><text x="20" y="26" fill="#011410" font-size="9" font-weight="700" text-anchor="middle" font-family="Inter, sans-serif">ESP</text></svg></div>
           <div class="cert-card__content">
             <h3 class="cert-card__title">Bachelor's in Computer Engineering</h3>
             <p class="cert-card__issuer">Faculty of Sciences of Tunis</p>
-            <p class="cert-card__description">
-              Degree in Computer Engineering with a specialisation in IoT and Embedded Systems.
-            </p>
+            <p class="cert-card__description">Degree in Computer Engineering with a specialisation in IoT and Embedded Systems.</p>
             <span class="cert-card__date">2021 – 2024</span>
           </div>
         </article>
@@ -1190,105 +630,67 @@
       </div>
     </div>
   </section>
-
-  <!-- ===== CONTACT SECTION ===== -->
-  <section class="section contact" id="contact" aria-labelledby="contactHeading">
+  <!-- ===== CONTACT ===== -->
+  <section class="section section--alt contact" id="contact" aria-labelledby="contactHeading">
     <div class="section__container">
       <div class="section__header">
         <span class="section__label">Get in touch</span>
         <h2 class="section__title" id="contactHeading">Contact Me</h2>
         <div class="section__divider" aria-hidden="true"></div>
-        <p class="section__subtitle">
-          Open to freelance projects, full-time positions, and technical collaborations.
-          Feel free to reach out — I usually respond within 24 hours.
-        </p>
+        <p class="section__subtitle">Open to freelance projects, full-time positions, and technical collaborations. I usually respond within 24 hours.</p>
       </div>
-
       <div class="contact__grid">
         <div class="contact__info">
           <div class="contact__card">
-            <div class="contact__card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div>
-              <h3>Email</h3>
-              <a href="mailto:Mouhib.HLAILI@esprit.tn">Mouhib.HLAILI@esprit.tn</a>
-            </div>
+            <div class="contact__card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div><h3>Email</h3><a href="mailto:Mouhib.HLAILI@esprit.tn">Mouhib.HLAILI@esprit.tn</a></div>
           </div>
           <div class="contact__card">
-            <div class="contact__card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </div>
-            <div>
-              <h3>LinkedIn</h3>
-              <a href="https://www.linkedin.com/in/hlaili-mouhib/" target="_blank" rel="noopener noreferrer">linkedin.com/in/hlaili-mouhib</a>
-            </div>
+            <div class="contact__card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
+            <div><h3>LinkedIn</h3><a href="https://www.linkedin.com/in/hlaili-mouhib/" target="_blank" rel="noopener noreferrer">linkedin.com/in/hlaili-mouhib</a></div>
           </div>
           <div class="contact__card">
-            <div class="contact__card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            </div>
-            <div>
-              <h3>GitHub</h3>
-              <a href="https://github.com/Mouhib223" target="_blank" rel="noopener noreferrer">github.com/Mouhib223</a>
-            </div>
+            <div class="contact__card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></div>
+            <div><h3>GitHub</h3><a href="https://github.com/Mouhib223" target="_blank" rel="noopener noreferrer">github.com/Mouhib223</a></div>
           </div>
           <div class="contact__card">
-            <div class="contact__card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <h3>Location</h3>
-              <p>Tunis, Tunisia</p>
-            </div>
+            <div class="contact__card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><h3>Location</h3><p>Tunis, Tunisia</p></div>
           </div>
         </div>
 
-        <!-- Contact Form -->
         <div class="contact__form-wrapper">
           <form class="contact-form" id="contactForm" novalidate aria-label="Contact form">
             <div class="form-group">
               <label for="contactName" class="form-label">Full Name <span aria-hidden="true">*</span></label>
               <input type="text" id="contactName" name="name" class="form-input" placeholder="Your full name" required autocomplete="name" aria-required="true" />
-              <span class="form-error" id="nameError" role="alert" aria-live="polite"></span>
+              <span class="form-error" id="contactNameError" role="alert" aria-live="polite"></span>
             </div>
-
             <div class="form-group">
               <label for="contactEmail" class="form-label">Email Address <span aria-hidden="true">*</span></label>
               <input type="email" id="contactEmail" name="email" class="form-input" placeholder="your.email@example.com" required autocomplete="email" aria-required="true" />
-              <span class="form-error" id="emailError" role="alert" aria-live="polite"></span>
+              <span class="form-error" id="contactEmailError" role="alert" aria-live="polite"></span>
             </div>
-
             <div class="form-group">
               <label for="contactSubject" class="form-label">Subject</label>
-              <input type="text" id="contactSubject" name="subject" class="form-input" placeholder="Project collaboration, job opportunity, etc." autocomplete="off" />
+              <input type="text" id="contactSubject" name="subject" class="form-input" placeholder="Project collaboration, job opportunity…" autocomplete="off" />
             </div>
-
             <div class="form-group">
               <label for="contactMessage" class="form-label">Message <span aria-hidden="true">*</span></label>
-              <textarea id="contactMessage" name="message" class="form-textarea" placeholder="Tell me about your project or opportunity..." rows="5" required aria-required="true"></textarea>
-              <span class="form-error" id="messageError" role="alert" aria-live="polite"></span>
+              <textarea id="contactMessage" name="message" class="form-textarea" placeholder="Tell me about your project or opportunity…" rows="5" required aria-required="true"></textarea>
+              <span class="form-error" id="contactMessageError" role="alert" aria-live="polite"></span>
             </div>
-
             <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
-              <span class="btn__text">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                Send Message
-              </span>
-              <span class="btn__loading" aria-hidden="true">
-                <span class="spinner"></span>
-                Sending...
-              </span>
+              <span class="btn__text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>Send Message</span>
+              <span class="btn__loading" aria-hidden="true"><span class="spinner"></span>Sending…</span>
             </button>
-
-            <!-- Form status messages -->
             <div class="form-status form-status--success" id="formSuccess" role="alert" aria-live="polite" hidden>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              <p>Message prepared! <a href="mailto:Mouhib.HLAILI@esprit.tn?subject=Contact%20from%20Portfolio" class="form-mailto-link" id="formMailtoLink">Click here to send via your email client.</a></p>
+              <p>Message ready! <a href="#" class="form-mailto-link" id="formMailtoLink">Click here to send via your email client.</a></p>
             </div>
             <div class="form-status form-status--info" id="formInfo" role="status" aria-live="polite" hidden>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-              <p>No backend connected. Your message will open in your email client.</p>
+              <p>No backend SMTP configured. Your message opens in your email client.</p>
             </div>
           </form>
         </div>
@@ -1301,12 +703,9 @@
     <div class="footer__container">
       <div class="footer__top">
         <div class="footer__brand">
-          <span class="footer__logo">
-            <span class="nav__logo-bracket">&lt;</span>MH<span class="nav__logo-bracket">/&gt;</span>
-          </span>
+          <span class="footer__logo"><span class="nav__logo-bracket">&lt;</span>MH<span class="nav__logo-bracket">/&gt;</span></span>
           <p class="footer__tagline">Full-Stack Software Engineer<br/>Tunisia 🇹🇳</p>
         </div>
-
         <nav class="footer__nav" aria-label="Footer navigation">
           <ul role="list">
             <li><a href="#home">Home</a></li>
@@ -1321,23 +720,15 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
-
         <div class="footer__socials">
-          <a href="https://github.com/Mouhib223" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/hlaili-mouhib/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <a href="mailto:Mouhib.HLAILI@esprit.tn" class="social-link" aria-label="Email">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </a>
+          <a href="https://github.com/Mouhib223" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+          <a href="https://www.linkedin.com/in/hlaili-mouhib/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="mailto:Mouhib.HLAILI@esprit.tn" class="social-link" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
         </div>
       </div>
-
       <div class="footer__bottom">
-        <p>&copy; <span id="footerYear">2026</span> Mouhib Hlaili. Built with passion &amp; clean code.</p>
-        <p class="footer__stack">HTML · CSS · Vanilla JS · No frameworks needed</p>
+        <p>&copy; <span id="footerYear">2026</span> Mouhib Hlaili. Built with clean code.</p>
+        <p class="footer__stack">HTML · CSS · Vanilla JS · Zero dependencies</p>
       </div>
     </div>
   </footer>
@@ -1348,6 +739,7 @@
   </button>
 
   <!-- Scripts -->
+  <script src="assets/js/data.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
