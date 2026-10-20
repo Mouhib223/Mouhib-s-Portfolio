@@ -1,0 +1,69 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# GitHub Actions — Deploy static portfolio to GitHub Pages
+#
+# Live URL after setup:
+#   https://mouhib223.github.io/Mouhib-s-Portfolio/
+#
+# To serve from https://mouhib223.github.io/Portfolio/ instead:
+#   Rename the GitHub repository to "Portfolio" (Settings → Repository name)
+#   The URL updates automatically; no change to this file is needed.
+#
+# Required one-time repo settings  (Settings → Pages):
+#   Source  →  GitHub Actions   (not "Deploy from branch")
+# ──────────────────────────────────────────────────────────────────────────────
+
+name: Deploy Portfolio to GitHub Pages
+
+on:
+  # Deploy on every push to main
+  push:
+    branches: ["main"]
+
+  # Allow manual trigger from the Actions tab
+  workflow_dispatch:
+
+# Grant the GITHUB_TOKEN the minimum permissions needed
+permissions:
+  contents: read      # read repo files
+  pages:    write     # create/update the gh-pages deployment
+  id-token: write     # required by the actions/deploy-pages action
+
+# Cancel any in-progress run if a new one is triggered
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      # ── 1. Check out the repo ────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── 2. Create .nojekyll so GitHub Pages serves all files as-is ──────────
+      #       (prevents Jekyll from ignoring files that start with underscore)
+      - name: Ensure .nojekyll exists
+        run: touch .nojekyll
+
+      # ── 3. Upload the entire repo root as the Pages artifact ─────────────────
+      #       The static site is pure HTML/CSS/JS with no build step.
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload everything from the repo root
+          path: "."
+
+      # ── 4. Deploy to GitHub Pages ────────────────────────────────────────────
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
